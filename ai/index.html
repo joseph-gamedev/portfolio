@@ -1,0 +1,1525 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../patterns/">
+      
+      
+        <link rel="next" href="../engine/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Artificial Intelligence in Games - Game Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#artificial-intelligence-in-games" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Game Development" class="md-header__button md-logo" aria-label="Game Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Game Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Artificial Intelligence in Games
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cpp/" class="md-tabs__link">
+        
+  
+    
+  
+  C++
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dsa/" class="md-tabs__link">
+          
+  
+  Core Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../graphics/" class="md-tabs__link">
+          
+  
+  Graphics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../patterns/" class="md-tabs__link">
+        
+  
+    
+  
+  Programming Patterns
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../engine/" class="md-tabs__link">
+        
+  
+    
+  
+  Game Engine Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../algorithms/" class="md-tabs__link">
+        
+  
+    
+  
+  Algorithms
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../intersections/" class="md-tabs__link">
+        
+  
+    
+  
+  Intersections
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../graph/" class="md-tabs__link">
+        
+  
+    
+  
+  Graph
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../gameplay/" class="md-tabs__link">
+        
+  
+    
+  
+  Gameplay
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../maths/" class="md-tabs__link">
+        
+  
+    
+  
+  Maths
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Game Development" class="md-nav__button md-logo" aria-label="Game Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Game Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Core Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Structures and Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Graphics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Graphics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphics Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    AI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence in Games
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence in Games
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-game-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Game AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Game AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview-of-ai-in-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of AI in Games
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Historical Perspective
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-evolution-of-ai-in-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Evolution of AI in Games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Evolution of AI in Games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-concepts-and-terminologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Concepts and Terminologies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pathfinding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pathfinding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pathfinding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-pathfinding-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Pathfinding Algorithms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-of-pathfinding-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison of Pathfinding Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison of Pathfinding Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-a-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementing A* Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizations-and-variations-of-pathfinding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizations and Variations of Pathfinding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation-meshes-and-waypoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation Meshes and Waypoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-machines-in-game-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Machines in Game AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Machines in Game AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-state-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to State Machines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to State Machines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-state-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of State Machines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-study-ai-in-a-stealth-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case Study: AI in a Stealth Game
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Case Study: AI in a Stealth Game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview-of-enemy-ai-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Enemy AI Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Engine Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intersections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intersections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gameplay/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gameplay
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maths/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maths
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="artificial-intelligence-in-games">Artificial Intelligence in Games</h1>
+<p>Artificial Intelligence (AI) is a crucial component in modern game development, enhancing gameplay, creating challenging opponents, and bringing virtual worlds to life.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#introduction-to-game-ai">Introduction to Game AI</a></li>
+<li><a href="#pathfinding">Pathfinding</a></li>
+<li><a href="#decision-making">Decision Making</a></li>
+<li><a href="#behavior-trees">Behavior Trees</a></li>
+<li><a href="#state-machines-in-game-ai">State Machines</a></li>
+<li><a href="#machine-learning-in-games">Machine Learning in Games</a></li>
+<li><a href="#procedural-content-generation">Procedural Content Generation</a></li>
+<li><a href="#fuzzy-logic">Fuzzy Logic</a></li>
+<li><a href="#genetic-algorithms">Genetic Algorithms</a></li>
+</ol>
+<h2 id="introduction-to-game-ai">Introduction to Game AI</h2>
+<h3 id="overview-of-ai-in-games">Overview of AI in Games</h3>
+<p>Game AI serves several crucial purposes in modern video games:</p>
+<ol>
+<li>
+<p><strong>Opponent Behavior</strong>: Creating challenging and realistic opponents in strategy games, sports games, and first-person shooters.</p>
+</li>
+<li>
+<p><strong>NPC Interactions</strong>: Enabling non-player characters to engage in believable dialogues and actions, enhancing the game's narrative and immersion.</p>
+</li>
+<li>
+<p><strong>Procedural Content Generation</strong>: Automatically generating game content like levels, quests, or even entire worlds.</p>
+</li>
+<li>
+<p><strong>Dynamic Difficulty Adjustment</strong>: Adapting the game's challenge level based on the player's performance.</p>
+</li>
+<li>
+<p><strong>Pathfinding</strong>: Guiding characters through complex game environments efficiently.</p>
+</li>
+<li>
+<p><strong>Decision Making</strong>: Allowing game entities to make choices based on the current game state and predefined rules.</p>
+</li>
+</ol>
+<h3 id="historical-perspective">Historical Perspective</h3>
+<h2 id="the-evolution-of-ai-in-games">The Evolution of AI in Games</h2>
+<p>The evolution of AI in games has been closely tied to the advancement of gaming hardware and software:</p>
+<ol>
+<li>
+<p><strong>1970s-1980s: The Dawn of Game AI:</strong> </p>
+<ul>
+<li><strong>Early games:</strong> Early video games employed simple rule-based systems due to limited computing power.</li>
+<li><strong>Pac-Man (1980):</strong> Used basic algorithms for ghost behavior, such as chase, scatter, and ambush patterns.</li>
+</ul>
+</li>
+<li>
+<p><strong>1990s: The Rise of Strategy and Real-Time Control:</strong></p>
+<ul>
+<li><strong>Real-Time Strategy Games:</strong> Titles like Warcraft (1994) and Age of Empires (1997) advanced unit control and resource management AI, requiring more sophisticated decision-making processes.</li>
+<li><strong>AI in First-Person Shooters:</strong> Games like Half-Life (1998) introduced AI that could navigate complex environments, use cover effectively, and respond dynamically to player actions.</li>
+</ul>
+</li>
+<li>
+<p><strong>2000s: Increased Complexity and Sophistication:</strong> </p>
+<ul>
+<li><strong>Open-World AI:</strong> Grand Theft Auto III (2001) and subsequent GTA titles featured NPCs with daily routines, traffic systems, and dynamic responses to player actions, creating immersive and realistic city environments.</li>
+<li><strong>Squad-Based AI:</strong> Halo (2001) featured AI that coordinated actions among squad members, providing more realistic and challenging combat scenarios.</li>
+<li><strong>Stealth and Tactical Games:</strong> Titles like Tom Clancy’s Splinter Cell (2002) and Metal Gear Solid 2 (2001) utilized AI that could detect players through sight and sound, and react strategically to their presence.</li>
+</ul>
+</li>
+<li>
+<p><strong>2010s: Emergence of Advanced AI Systems:</strong> </p>
+<ul>
+<li><strong>Open-World Games: The Elder Scrolls V:</strong> Skyrim (2011) and Grand Theft Auto V (2013) continued to evolve NPC behavior, with complex schedules and interactive environments.</li>
+<li><strong>Adaptive AI:</strong> Games like Left 4 Dead (2008) employed AI Director systems to dynamically adjust game difficulty based on player performance.</li>
+<li><strong>Nemesis System:</strong> Middle-earth: Shadow of Mordor (2014) and Middle-earth: Shadow of War (2017) introduced the Nemesis System, which generated unique enemies that remembered their encounters with the player, creating personalized and evolving adversaries.</li>
+</ul>
+</li>
+<li>
+<p><strong>2020s: The Era of Machine Learning and Advanced AI:</strong></p>
+<ul>
+<li><strong>Machine Learning Techniques:</strong> Increasingly used in games to create more adaptive and intelligent AI. AlphaStar for StarCraft II demonstrated AI capabilities that could compete with professional human players.</li>
+<li><strong>Procedural Content Generation:</strong> AI is being used to generate game content on the fly, as seen in games like No Man’s Sky (2016).</li>
+<li><strong>Advanced NPC Interactions:</strong> AI in games like Cyberpunk 2077 (2020) aims to create more realistic and engaging interactions with NPCs, providing depth to the game narrative.</li>
+<li><strong>AI in Watch Dogs: Legion (2020):</strong> Introduced a system where every NPC in the game world has a unique identity, backstory, and behavior patterns, allowing players to recruit and play as any character in the game.</li>
+</ul>
+</li>
+</ol>
+<h3 id="basic-concepts-and-terminologies">Basic Concepts and Terminologies</h3>
+<ol>
+<li>
+<p><strong>Agent</strong>: Any entity in the game that makes decisions or takes actions. This could be an enemy, an NPC, or even elements of the game environment.</p>
+</li>
+<li>
+<p><strong>State</strong>: The current condition of the game or an agent, including all relevant variables (position, health, inventory, etc.).</p>
+</li>
+<li>
+<p><strong>Action</strong>: A move or decision that an agent can make, which changes the current state.</p>
+</li>
+<li>
+<p><strong>Utility</strong>: A measure of the desirability of a particular state or action.</p>
+</li>
+<li>
+<p><strong>Heuristic</strong>: A rule of thumb or shortcut used to make decisions or solve problems more quickly, often at the cost of perfect accuracy.</p>
+</li>
+<li>
+<p><strong>Pathfinding</strong>: The process of finding a route from one point to another in the game world.</p>
+</li>
+<li>
+<p><strong>Behavior Tree</strong>: A hierarchical structure used to organize and control AI behavior through a series of tasks and conditions.</p>
+</li>
+<li>
+<p><strong>Finite State Machine (FSM)</strong>: A model of computation based on a machine with a finite number of states, commonly used for simple AI behaviors.</p>
+</li>
+<li>
+<p><strong>Artificial Neural Network</strong>: A machine learning model inspired by biological neural networks, used for more complex decision-making and pattern recognition tasks.</p>
+</li>
+<li>
+<p><strong>Procedural Generation</strong>: The algorithmic creation of game content with limited or indirect user input.</p>
+</li>
+</ol>
+<h2 id="pathfinding">Pathfinding</h2>
+<p>Pathfinding is a fundamental AI technique used in games to navigate characters through complex environments. It's crucial for creating realistic movement and ensuring that game entities can efficiently reach their destinations while avoiding obstacles.</p>
+<h3 id="introduction-to-pathfinding-algorithms">Introduction to Pathfinding Algorithms</h3>
+<p>Pathfinding algorithms are used to find the best route between two points in a game world. The "best" route can vary depending on the game's needs - it might be the shortest path, the safest path, or a path that meets certain criteria.</p>
+<p>Common pathfinding algorithms include:</p>
+<ol>
+<li><strong>Breadth-First Search (BFS)</strong>: Explores all neighbor nodes at the present depth before moving to nodes at the next depth level.</li>
+<li><strong>Depth-First Search (DFS)</strong>: Explores as far as possible along each branch before backtracking.</li>
+<li><strong>Dijkstra's Algorithm</strong>: Finds the shortest path between nodes in a graph, which may represent a game map.</li>
+<li><strong>A* (A-Star) Algorithm</strong>: An extension of Dijkstra's algorithm that uses heuristics to guide the search and improve performance.</li>
+</ol>
+<h2 id="comparison-of-pathfinding-algorithms">Comparison of Pathfinding Algorithms</h2>
+<p>Here's a detailed comparison of the most common pathfinding algorithms used in game development:</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Principle</th>
+<th>Advantages</th>
+<th>Disadvantages</th>
+<th>Typical Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Breadth-First Search (BFS)</td>
+<td>Explores all neighbor nodes at the present depth before moving to nodes at the next depth level.</td>
+<td>- Guarantees the shortest path in unweighted graphs<br>- Simple to implement<br>- Works well in maze-like environments</td>
+<td>- Slow in large spaces<br>- Doesn't consider terrain costs<br>- High memory usage</td>
+<td>- Simple grid-based games<br>- Maze solvers<br>- Finding shortest path in terms of number of steps</td>
+</tr>
+<tr>
+<td>Depth-First Search (DFS)</td>
+<td>Explores as far as possible along each branch before backtracking.</td>
+<td>- Low memory usage<br>- Can be faster than BFS if the goal is far from the start</td>
+<td>- Doesn't guarantee shortest path<br>- Can get stuck in infinite loops without proper checks</td>
+<td>- Puzzle solving<br>- Exploring all possible paths<br>- Mapping unknown territories</td>
+</tr>
+<tr>
+<td>Dijkstra's Algorithm</td>
+<td>Finds the shortest path between nodes in a weighted graph.</td>
+<td>- Guarantees the shortest path in weighted graphs<br>- Can handle negative edge weights (with modifications)</td>
+<td>- Explores in all directions, which can be inefficient<br>- Slower than A* for most game scenarios</td>
+<td>- Finding shortest paths in road networks<br>- Calculating minimum cost paths</td>
+</tr>
+<tr>
+<td>A* (A-Star)</td>
+<td>An extension of Dijkstra's algorithm that uses heuristics to guide the search.</td>
+<td>- Generally faster than Dijkstra's<br>- Flexible due to customizable heuristics<br>- Guarantees shortest path if heuristic is admissible</td>
+<td>- Can be memory-intensive for large maps<br>- Performance depends on the quality of the heuristic</td>
+<td>- General purpose pathfinding in games<br>- Real-time strategy games<br>- Character navigation in open worlds</td>
+</tr>
+<tr>
+<td>Jump Point Search (JPS)</td>
+<td>An optimization of A* for uniform-cost grids.</td>
+<td>- Much faster than A* on uniform grids<br>- Reduces the number of nodes expanded</td>
+<td>- Only works on uniform-cost grid maps<br>- More complex to implement than A*</td>
+<td>- 2D grid-based games<br>- Real-time strategy games on uniform terrain</td>
+</tr>
+<tr>
+<td>Theta*</td>
+<td>A variation of A* that produces smoother paths by considering line-of-sight.</td>
+<td>- Creates more natural-looking paths<br>- Can reduce the number of waypoints</td>
+<td>- More computationally expensive than A*<br>- Requires line-of-sight checks</td>
+<td>- Games requiring smooth character movement<br>- 3D environments with clear visibility</td>
+</tr>
+<tr>
+<td>Hierarchical Pathfinding</td>
+<td>Divides the map into clusters and performs pathfinding at multiple levels of abstraction.</td>
+<td>- Can significantly speed up pathfinding on large maps<br>- Reduces memory usage</td>
+<td>- More complex to implement<br>- May produce suboptimal paths</td>
+<td>- Large open-world games<br>- Strategy games with vast maps</td>
+</tr>
+<tr>
+<td>Bidirectional Search</td>
+<td>Searches from both the start and goal simultaneously.</td>
+<td>- Can be faster than unidirectional search<br>- Useful when start and goal are far apart</td>
+<td>- More complex to implement<br>- May use more memory than unidirectional search</td>
+<td>- Long-distance pathfinding<br>- Routing in large networks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="performance-comparison">Performance Comparison</h3>
+<ol>
+<li>
+<p><strong>Speed</strong>:
+   JPS &gt; Theta* &gt; A* &gt; Dijkstra's &gt; BFS &gt; DFS
+   (Note: This can vary based on the specific implementation and scenario)</p>
+</li>
+<li>
+<p><strong>Memory Usage</strong>:
+   DFS &lt; BFS &lt; Dijkstra's &lt; A* &lt; Theta* &lt; JPS</p>
+</li>
+<li>
+<p><strong>Path Quality</strong>:
+   Theta* ≥ A* = Dijkstra's &gt; BFS &gt; DFS = JPS
+   (JPS finds optimal paths on uniform grids, but doesn't inherently produce smooth paths)</p>
+</li>
+<li>
+<p><strong>Flexibility</strong>:
+   A* &gt; Dijkstra's &gt; Theta* &gt; BFS = DFS &gt; JPS</p>
+</li>
+</ol>
+<h3 id="choosing-the-right-algorithm">Choosing the Right Algorithm</h3>
+<p>The choice of pathfinding algorithm depends on various factors:</p>
+<ol>
+<li><strong>Map Size</strong>: For large maps, consider hierarchical pathfinding or JPS (if applicable).</li>
+<li><strong>Terrain Complexity</strong>: For uniform grids, JPS is excellent. For varied terrain, A<em> or Theta</em> are better choices.</li>
+<li><strong>Path Smoothness</strong>: If smooth paths are crucial, consider Theta*.</li>
+<li><strong>Computation Time</strong>: If pathfinding needs to be very fast, JPS (for grids) or optimized A* implementations are good choices.</li>
+<li><strong>Memory Constraints</strong>: If memory is limited, consider DFS or optimized A* variants.</li>
+<li><strong>Implementation Complexity</strong>: If simplicity is key, BFS or basic A* might be the best choice.</li>
+</ol>
+<p>In practice, many games use a combination of techniques. For example, using hierarchical pathfinding with A<em> at each level, or using JPS for long-distance pathfinding and Theta</em> for local refinement of paths.</p>
+<h3 id="implementing-a-algorithm">Implementing A* Algorithm</h3>
+<p>The A* algorithm is one of the most popular pathfinding algorithms in game development due to its efficiency and flexibility. Here's a basic implementation in C++:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
+</code></pre></div>
+<h3 id="optimizations-and-variations-of-pathfinding">Optimizations and Variations of Pathfinding</h3>
+<p><strong>Jump Point Search (JPS)</strong>: An optimization of A<em> for uniform-cost grids that can dramatically reduce the number of nodes expanded.
+Hierarchical Pathfinding: Divides the map into clusters and performs pathfinding at multiple levels of abstraction.
+Anytime Algorithms: Algorithms like Anytime A</em> that can return a valid solution even if interrupted before finding the optimal path.
+Bidirectional Search: Searches from both the start and goal simultaneously, potentially finding the path faster.
+Theta<em>: A variation of A</em> that produces smoother paths by considering line-of-sight between nodes.</p>
+<h3 id="navigation-meshes-and-waypoints">Navigation Meshes and Waypoints</h3>
+<p>Navigation meshes (navmeshes) and waypoints are higher-level structures used to simplify pathfinding in complex 3D environments.</p>
+<p><strong>Navigation Meshes</strong>:</p>
+<p>A navmesh is a collection of convex polygons that define walkable areas in the game world.
+It simplifies pathfinding by reducing the search space to a smaller set of polygons.
+Navmeshes can handle different terrain types and dynamic obstacles.</p>
+<p>Implementation steps:</p>
+<ol>
+<li>Divide the walkable areas of your game world into convex polygons.</li>
+<li>Create a graph where each polygon is a node.</li>
+<li>Use A* or other pathfinding algorithms on this simplified graph.</li>
+<li>Once a path is found, use local steering behaviors to navigate within each polygon.</li>
+</ol>
+<p><strong>Waypoints</strong>:</p>
+<p>Waypoints are predefined points in the game world that characters can navigate between.
+They're often used in conjunction with navmeshes for more precise control over character movement.</p>
+<p>Implementation:</p>
+<ol>
+<li>Place waypoints at strategic locations in your game world.</li>
+<li>Create a graph connecting these waypoints.</li>
+<li>Use pathfinding algorithms to navigate between waypoints.</li>
+<li>Implement local navigation for moving between waypoints.</li>
+</ol>
+<p>Both navmeshes and waypoints can significantly improve pathfinding performance, especially in large or complex game worlds. They allow for more efficient pathfinding calculations and can be combined with runtime optimizations for dynamic environments.</p>
+<h2 id="state-machines-in-game-ai">State Machines in Game AI</h2>
+<p>State Machines, particularly Finite State Machines (FSMs), are a fundamental technique in game AI for modeling character behavior and game logic.</p>
+<h3 id="introduction-to-state-machines">Introduction to State Machines</h3>
+<p>A State Machine is a behavioral model composed of a finite number of states, transitions between those states, and actions. In game AI, each state represents a specific behavior or condition of a game entity.</p>
+<h4 id="key-components">Key Components:</h4>
+<ol>
+<li><strong>States</strong>: Distinct behaviors or conditions an entity can be in.</li>
+<li><strong>Transitions</strong>: Rules for moving between states.</li>
+<li><strong>Actions</strong>: Behaviors executed while in a state or when transitioning.</li>
+</ol>
+<h3 id="types-of-state-machines">Types of State Machines</h3>
+<ol>
+<li><strong>Finite State Machines (FSMs)</strong>: The most common type, with a limited number of states.</li>
+<li><strong>Hierarchical State Machines</strong>: FSMs with nested states, allowing for more complex behaviors.</li>
+<li><strong>Fuzzy State Machines</strong>: Incorporate fuzzy logic, allowing entities to be in multiple states simultaneously to varying degrees.</li>
+</ol>
+<h2 id="case-study-ai-in-a-stealth-game">Case Study: AI in a Stealth Game</h2>
+<p>In this case study, we'll explore the AI systems for enemy guards in a stealth game similar to Metal Gear Solid or Splinter Cell. The goal is to create intelligent, reactive enemies that provide a challenging and immersive experience for the player.</p>
+<h3 id="overview-of-enemy-ai-requirements">Overview of Enemy AI Requirements</h3>
+<ol>
+<li>Patrol predefined routes</li>
+<li>React to suspicious sounds or sights</li>
+<li>Search for the player when alerted</li>
+<li>Engage in combat when the player is detected</li>
+<li>Communicate with other guards</li>
+<li>Return to normal behavior after losing track of the player</li>
+</ol>
+<h3 id="ai-architecture">AI Architecture</h3>
+<p>We'll use a combination of techniques to achieve complex, realistic behavior:</p>
+<ol>
+<li><strong>Finite State Machine (FSM)</strong>: Core decision-making structure</li>
+<li><strong>Behavior Trees</strong>: For more complex decision sequences</li>
+<li><strong>Pathfinding</strong>: A* algorithm for navigation</li>
+<li><strong>Perception System</strong>: For sight and sound detection</li>
+<li><strong>Communication System</strong>: For inter-guard messaging</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

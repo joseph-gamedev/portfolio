@@ -1,0 +1,3565 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../gameplay/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Maths - Game Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#maths" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Game Development" class="md-header__button md-logo" aria-label="Game Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Game Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Maths
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cpp/" class="md-tabs__link">
+        
+  
+    
+  
+  C++
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dsa/" class="md-tabs__link">
+          
+  
+  Core Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../graphics/" class="md-tabs__link">
+          
+  
+  Graphics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../patterns/" class="md-tabs__link">
+        
+  
+    
+  
+  Programming Patterns
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai/" class="md-tabs__link">
+          
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../engine/" class="md-tabs__link">
+        
+  
+    
+  
+  Game Engine Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../algorithms/" class="md-tabs__link">
+        
+  
+    
+  
+  Algorithms
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../intersections/" class="md-tabs__link">
+        
+  
+    
+  
+  Intersections
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../graph/" class="md-tabs__link">
+        
+  
+    
+  
+  Graph
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../gameplay/" class="md-tabs__link">
+        
+  
+    
+  
+  Gameplay
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Maths
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Game Development" class="md-nav__button md-logo" aria-label="Game Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Game Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Core Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Structures and Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Graphics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Graphics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphics Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence in Games
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Engine Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intersections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intersections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gameplay/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gameplay
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Maths
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Maths
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vectors-and-their-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Vectors and Their Representation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vector-addition-and-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Vector Addition and Subtraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-vector-addition-and-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Vector Addition and Subtraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Scalar Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dot-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Dot Product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cross-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Cross Product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-cross-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Cross Product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-vector-magnitude-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Vector Magnitude (Length)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-unit-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Unit Vector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-vector-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Vector Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-vector-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Vector Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-applications-in-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Applications in Game Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Applications in Game Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physics-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physics Simulations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-matrix-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Matrix Representation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-matrix-addition-and-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Matrix Addition and Subtraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-scalar-multiplication_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Scalar Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Matrix Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Matrix Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-identity-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Identity Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-transformation-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Transformation Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Transformation Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Homogeneous Coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-combining-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Combining Transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Perspective Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Perspective Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-applications-in-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Applications in Game Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Applications in Game Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-transformation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Transformation Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Transformation Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-model-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Model Transformation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Model Transformation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-model-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Model Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-view-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. View Transformation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. View Transformation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camera-transformation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Transformation Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-view-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of View Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-projection-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Projection Transformation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Projection Transformation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orthographic-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthographic Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspective Projection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-projection-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Projection Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-viewport-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Viewport Transformation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Viewport Transformation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewport-transformation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewport Transformation Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-viewport-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Viewport Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-full-transformation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Full Transformation Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-the-full-transformation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of the Full Transformation Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-quaternions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Quaternions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Quaternions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-quaternion-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Quaternion Representation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-quaternion-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Quaternion Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Quaternion Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-addition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quaternion Addition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quaternion Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-conjugate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quaternion Conjugate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quaternion Norm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-inverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quaternion Inverse
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-unit-quaternions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Unit Quaternions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-rotations-using-quaternions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Rotations Using Quaternions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-quaternion-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Quaternion Rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-applying-quaternion-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Applying Quaternion Rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-spherical-linear-interpolation-slerp" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Spherical Linear Interpolation (SLERP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-slerp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for SLERP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-applications-in-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Applications in Game Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Applications in Game Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smooth-rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smooth Rotations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeletal-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skeletal Animation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physics-simulations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physics Simulations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ray-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ray Casting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ray Casting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-basic-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Basic Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-of-a-ray" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components of a Ray
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-a-ray" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of a Ray
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ray-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ray Equation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ray-plane-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Ray-Plane Intersection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ray-Plane Intersection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plane-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plane Equation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-ray-plane-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Ray-Plane Intersection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagram of Ray-Plane Intersection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intersection-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intersection Calculation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ray-sphere-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ray-Sphere Intersection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ray-Sphere Intersection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sphere-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sphere Equation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-ray-sphere-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Ray-Sphere Intersection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagram of Ray-Sphere Intersection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intersection-calculation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intersection Calculation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ray-aabb-axis-aligned-bounding-box-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ray-AABB (Axis-Aligned Bounding Box) Intersection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-ray-aabb-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Ray-AABB Intersection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagram of Ray-AABB Intersection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intersection-calculation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intersection Calculation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-t-for-each-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compute \(t\) for each axis:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-applications-in-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Applications in Game Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Applications in Game Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collision-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collision Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visibility-determination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visibility Determination
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picking-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Picking Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shadow-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shadow Mapping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bounding-volume-hierarchies" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Bounding Volume Hierarchies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Projection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-orthographic-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Orthographic Projection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Orthographic Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orthographic-projection-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthographic Projection Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-orthographic-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Orthographic Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Perspective Projection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Perspective Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perspective-projection-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspective Projection Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-perspective-projection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Perspective Projection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-view-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. View Transformation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. View Transformation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-model-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Model Transformation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Model Transformation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-complete-transformation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Complete Transformation Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-for-complete-transformation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram for Complete Transformation Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-perspective-divide" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Perspective Divide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-normalized-device-coordinates-ndc" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Normalized Device Coordinates (NDC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-in-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications in Game Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-barycentric-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Barycentric Coordinates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curves
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bezier-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Bézier Curves
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Bézier Curves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-bezier-curve-degree-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Bézier Curve (Degree 1)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-linear-bezier-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Linear Bézier Curve
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagram of Linear Bézier Curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-bezier-curve-degree-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Bézier Curve (Degree 2)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-quadratic-bezier-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Quadratic Bézier Curve
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagram of Quadratic Bézier Curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cubic-bezier-curve-degree-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cubic Bézier Curve (Degree 3)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-cubic-bezier-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Cubic Bézier Curve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-b-spline-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. B-spline Curves
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. B-spline Curves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basis-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basis Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-spline-curve-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      B-spline Curve Equation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-b-spline-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of B-spline Curve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-practical-applications-in-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Practical Applications in Game Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Practical Applications in Game Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#animations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-trajectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Trajectories
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-normal-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Normal Mapping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Normal Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-what-is-a-normal-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a Normal Map?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-concept-of-normal-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Concept of Normal Mapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-normal-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Normal Mapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tangent-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Tangent Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-creating-the-tangent-space-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Creating the Tangent Space Basis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Creating the Tangent Space Basis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-tangent-and-bitangent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating Tangent and Bitangent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-normal-map-to-world-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Normal Map to World Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-tangent-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Tangent Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-lighting-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Lighting Calculations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-parallax-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Parallax Mapping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Parallax Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#height-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Height Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallax-offset-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallax Offset Calculation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-of-parallax-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram of Parallax Mapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-implementing-normal-mapping-in-shaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Implementing Normal Mapping in Shaders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Implementing Normal Mapping in Shaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Shader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragment-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragment Shader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-in-game-development_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications in Game Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="maths">Maths</h1>
+<h2 id="1-vectors">1. Vectors</h2>
+<p>Vector mathematics is a fundamental part of game development, used in various aspects such as physics simulations, graphics, and AI. I'll provide a detailed explanation of vector mathematics concepts essential for game development, accompanied by diagrams and equations.</p>
+<h3 id="1-vectors-and-their-representation">1. Vectors and Their Representation</h3>
+<p>A vector is a quantity that has both magnitude and direction. In 2D space, a vector <span class="arithmatex">\(\mathbf{v}\)</span> can be represented as:</p>
+<div class="arithmatex">\[
+\mathbf{v} = \begin{pmatrix} v_x \\ v_y \end{pmatrix}
+\]</div>
+<p>In 3D space, a vector <span class="arithmatex">\(\mathbf{v}\)</span> can be represented as:</p>
+<div class="arithmatex">\[
+\mathbf{v} = \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix}
+\]</div>
+<p>Here, <span class="arithmatex">\(v_x\)</span>, <span class="arithmatex">\(v_y\)</span>, and <span class="arithmatex">\(v_z\)</span> are the components of the vector in the x, y, and z directions, respectively.</p>
+<h3 id="2-vector-addition-and-subtraction">2. Vector Addition and Subtraction</h3>
+<p>Vectors can be added and subtracted component-wise. For two vectors <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{u} = \begin{pmatrix} u_x \\ u_y \\ u_z \end{pmatrix}, \quad \mathbf{v} = \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix}
+\]</div>
+<p>The addition of vectors:</p>
+<div class="arithmatex">\[
+\mathbf{u} + \mathbf{v} = \begin{pmatrix} u_x + v_x \\ u_y + v_y \\ u_z + v_z \end{pmatrix}
+\]</div>
+<p>The subtraction of vectors:</p>
+<div class="arithmatex">\[
+\mathbf{u} - \mathbf{v} = \begin{pmatrix} u_x - v_x \\ u_y - v_y \\ u_z - v_z \end{pmatrix}
+\]</div>
+<h3 id="diagram-for-vector-addition-and-subtraction">Diagram for Vector Addition and Subtraction</h3>
+<p>Consider two vectors <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span>:</p>
+<p><img alt="Vector Addition and Subtraction" src="../images/vector-add-subtract.jpg" /></p>
+<h3 id="3-scalar-multiplication">3. Scalar Multiplication</h3>
+<p>A vector can be multiplied by a scalar (a single number), scaling its magnitude. For a scalar <span class="arithmatex">\(k\)</span> and a vector <span class="arithmatex">\(\mathbf{v}\)</span>:</p>
+<div class="arithmatex">\[
+k \mathbf{v} = k \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix} = \begin{pmatrix} k v_x \\ k v_y \\ k v_z \end{pmatrix}
+\]</div>
+<h3 id="4-dot-product">4. Dot Product</h3>
+<p>The dot product (or scalar product) of two vectors <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span> is defined as:</p>
+<div class="arithmatex">\[
+\mathbf{u} \cdot \mathbf{v} = u_x v_x + u_y v_y + u_z v_z
+\]</div>
+<p>The dot product can also be expressed in terms of the magnitudes of the vectors and the cosine of the angle <span class="arithmatex">\(\theta\)</span> between them:</p>
+<div class="arithmatex">\[
+\mathbf{u} \cdot \mathbf{v} = |\mathbf{u}| |\mathbf{v}| \cos \theta
+\]</div>
+<h3 id="5-cross-product">5. Cross Product</h3>
+<p>The cross product (or vector product) of two vectors <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span> in 3D space results in a vector that is perpendicular to both <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{u} \times \mathbf{v} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ u_x &amp; u_y &amp; u_z \\ v_x &amp; v_y &amp; v_z \end{vmatrix} = \begin{pmatrix} u_y v_z - u_z v_y \\ u_z v_x - u_x v_z \\ u_x v_y - u_y v_x \end{pmatrix}
+\]</div>
+<h3 id="diagram-for-cross-product">Diagram for Cross Product</h3>
+<p>Consider two vectors <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span>:</p>
+<p><img alt="Cross Product" src="../images/cross.png" /></p>
+<h3 id="6-vector-magnitude-length">6. Vector Magnitude (Length)</h3>
+<p>The magnitude (or length) of a vector <span class="arithmatex">\(\mathbf{v}\)</span> is calculated using the Euclidean norm:</p>
+<div class="arithmatex">\[
+|\mathbf{v}| = \sqrt{v_x^2 + v_y^2 + v_z^2}
+\]</div>
+<h3 id="7-unit-vector">7. Unit Vector</h3>
+<p>A unit vector is a vector with a magnitude of 1. To convert a vector <span class="arithmatex">\(\mathbf{v}\)</span> into a unit vector <span class="arithmatex">\(\hat{\mathbf{v}}\)</span>:</p>
+<div class="arithmatex">\[
+\hat{\mathbf{v}} = \frac{\mathbf{v}}{|\mathbf{v}|} = \frac{1}{\sqrt{v_x^2 + v_y^2 + v_z^2}} \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix}
+\]</div>
+<h3 id="8-vector-projection">8. Vector Projection</h3>
+<p>The projection of vector <span class="arithmatex">\(\mathbf{v}\)</span> onto vector <span class="arithmatex">\(\mathbf{u}\)</span> is given by:</p>
+<div class="arithmatex">\[
+\text{proj}_{\mathbf{u}} \mathbf{v} = \frac{\mathbf{v} \cdot \mathbf{u}}{\mathbf{u} \cdot \mathbf{u}} \mathbf{u}
+\]</div>
+<h3 id="diagram-for-vector-projection">Diagram for Vector Projection</h3>
+<p>Consider the projection of vector <span class="arithmatex">\(\mathbf{v}\)</span> onto <span class="arithmatex">\(\mathbf{u}\)</span>:</p>
+<p><img alt="Vector Projection" src="../images/projDeriv.png" /></p>
+<h3 id="9-applications-in-game-development">9. Applications in Game Development</h3>
+<h4 id="physics-simulations">Physics Simulations</h4>
+<ul>
+<li><strong>Forces and Motion</strong>: Vectors represent forces, velocity, and acceleration.</li>
+<li><strong>Collision Detection</strong>: Vectors are used to calculate distances and directions between objects.</li>
+</ul>
+<h4 id="graphics">Graphics</h4>
+<ul>
+<li><strong>Transformations</strong>: Vectors are used in transformations, such as translation, rotation, and scaling.</li>
+<li><strong>Lighting</strong>: Vectors represent light directions and normals for shading calculations.</li>
+</ul>
+<h4 id="ai">AI</h4>
+<ul>
+<li><strong>Navigation</strong>: Vectors are used for pathfinding algorithms to determine directions and distances.</li>
+<li><strong>Steering Behaviors</strong>: Vectors represent desired directions and speeds for characters.</li>
+</ul>
+<p>Understanding vector mathematics is crucial for implementing these and many other systems in game development. The concepts of vector addition, subtraction, dot product, cross product, and projections form the foundation of many game mechanics and graphical effects.</p>
+<h2 id="2-matrices">2. Matrices</h2>
+<p>Matrix mathematics is essential for various aspects of game development, especially in graphics and physics. Matrices are used to perform transformations such as translation, rotation, scaling, and perspective projection. Here's a detailed explanation of matrix mathematics concepts important for game development, accompanied by diagrams and equations.</p>
+<h3 id="1-matrix-representation">1. Matrix Representation</h3>
+<p>A matrix is a rectangular array of numbers arranged in rows and columns. A common matrix used in game development is a 4x4 matrix, especially for 3D transformations:</p>
+<div class="arithmatex">\[
+\mathbf{M} = \begin{pmatrix}
+m_{11} &amp; m_{12} &amp; m_{13} &amp; m_{14} \\
+m_{21} &amp; m_{22} &amp; m_{23} &amp; m_{24} \\
+m_{31} &amp; m_{32} &amp; m_{33} &amp; m_{34} \\
+m_{41} &amp; m_{42} &amp; m_{43} &amp; m_{44}
+\end{pmatrix}
+\]</div>
+<h3 id="2-matrix-addition-and-subtraction">2. Matrix Addition and Subtraction</h3>
+<p>Matrices can be added or subtracted element-wise. For two matrices <span class="arithmatex">\(\mathbf{A}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{A} = \begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+a_{21} &amp; a_{22} &amp; a_{23} &amp; a_{24} \\
+a_{31} &amp; a_{32} &amp; a_{33} &amp; a_{34} \\
+a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
+\end{pmatrix}
+, \quad
+\mathbf{B} = \begin{pmatrix}
+b_{11} &amp; b_{12} &amp; b_{13} &amp; b_{14} \\
+b_{21} &amp; b_{22} &amp; b_{23} &amp; b_{24} \\
+b_{31} &amp; b_{32} &amp; b_{33} &amp; b_{34} \\
+b_{41} &amp; b_{42} &amp; b_{43} &amp; b_{44}
+\end{pmatrix}
+\]</div>
+<p>The addition of matrices:</p>
+<div class="arithmatex">\[
+\mathbf{A} + \mathbf{B} = \begin{pmatrix}
+a_{11} + b_{11} &amp; a_{12} + b_{12} &amp; a_{13} + b_{13} &amp; a_{14} + b_{14} \\
+a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; a_{23} + b_{23} &amp; a_{24} + b_{24} \\
+a_{31} + b_{31} &amp; a_{32} + b_{32} &amp; a_{33} + b_{33} &amp; a_{34} + b_{34} \\
+a_{41} + b_{41} &amp; a_{42} + b_{42} &amp; a_{43} + b_{43} &amp; a_{44} + b_{44}
+\end{pmatrix}
+\]</div>
+<p>The subtraction of matrices:</p>
+<div class="arithmatex">\[
+\mathbf{A} - \mathbf{B} = \begin{pmatrix}
+a_{11} - b_{11} &amp; a_{12} - b_{12} &amp; a_{13} - b_{13} &amp; a_{14} - b_{14} \\
+a_{21} - b_{21} &amp; a_{22} - b_{22} &amp; a_{23} - b_{23} &amp; a_{24} - b_{24} \\
+a_{31} - b_{31} &amp; a_{32} - b_{32} &amp; a_{33} - b_{33} &amp; a_{34} - b_{34} \\
+a_{41} - b_{41} &amp; a_{42} - b_{42} &amp; a_{43} - b_{43} &amp; a_{44} - b_{44}
+\end{pmatrix}
+\]</div>
+<h3 id="3-scalar-multiplication_1">3. Scalar Multiplication</h3>
+<p>A matrix can be multiplied by a scalar (a single number), scaling each element of the matrix. For a scalar <span class="arithmatex">\(k\)</span> and a matrix <span class="arithmatex">\(\mathbf{A}\)</span>:</p>
+<div class="arithmatex">\[
+k \mathbf{A} = k \begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+a_{21} &amp; a_{22} &amp; a_{23} &amp; a_{24} \\
+a_{31} &amp; a_{32} &amp; a_{33} &amp; a_{34} \\
+a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
+\end{pmatrix} = \begin{pmatrix}
+k a_{11} &amp; k a_{12} &amp; k a_{13} &amp; k a_{14} \\
+k a_{21} &amp; k a_{22} &amp; k a_{23} &amp; k a_{24} \\
+k a_{31} &amp; k a_{32} &amp; k a_{33} &amp; k a_{34} \\
+k a_{41} &amp; k a_{42} &amp; k a_{43} &amp; k a_{44}
+\end{pmatrix}
+\]</div>
+<h3 id="4-matrix-multiplication">4. Matrix Multiplication</h3>
+<p>Matrix multiplication is not element-wise; instead, it involves the dot product of rows and columns. For two matrices <span class="arithmatex">\(\mathbf{A}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{A} \cdot \mathbf{B} = \begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+a_{21} &amp; a_{22} &amp; a_{23} &amp; a_{24} \\
+a_{31} &amp; a_{32} &amp; a_{33} &amp; a_{34} \\
+a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+b_{11} &amp; b_{12} &amp; b_{13} &amp; b_{14} \\
+b_{21} &amp; b_{22} &amp; b_{23} &amp; b_{24} \\
+b_{31} &amp; b_{32} &amp; b_{33} &amp; b_{34} \\
+b_{41} &amp; b_{42} &amp; b_{43} &amp; b_{44}
+\end{pmatrix}
+= \begin{pmatrix}
+a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} + a_{14}b_{41} &amp; \cdots &amp; \cdots &amp; \cdots \\
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots
+\end{pmatrix}
+\]</div>
+<h3 id="diagram-for-matrix-multiplication">Diagram for Matrix Multiplication</h3>
+<p>Consider two matrices <span class="arithmatex">\(\mathbf{A}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span>:</p>
+<p><img alt="Matrix Multiplication" src="https://i.imgur.com/nWX7ug6.png" /></p>
+<h3 id="5-identity-matrix">5. Identity Matrix</h3>
+<p>The identity matrix is a special matrix that, when multiplied by another matrix, does not change the other matrix. For a 4x4 identity matrix <span class="arithmatex">\(\mathbf{I}\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{I} = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<h3 id="6-transformation-matrices">6. Transformation Matrices</h3>
+<h4 id="translation">Translation</h4>
+<p>A translation matrix moves a vector by a certain distance in the x, y, and z directions. For a translation by <span class="arithmatex">\((t_x, t_y, t_z)\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{T} = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; 0 &amp; t_y \\
+0 &amp; 0 &amp; 1 &amp; t_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<h4 id="rotation">Rotation</h4>
+<p>Rotation matrices rotate vectors around an axis. For a rotation by an angle <span class="arithmatex">\(\theta\)</span> around the z-axis:</p>
+<div class="arithmatex">\[
+\mathbf{R_z} = \begin{pmatrix}
+\cos \theta &amp; -\sin \theta &amp; 0 &amp; 0 \\
+\sin \theta &amp; \cos \theta &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<h4 id="scaling">Scaling</h4>
+<p>A scaling matrix scales a vector by factors <span class="arithmatex">\(s_x\)</span>, <span class="arithmatex">\(s_y\)</span>, and <span class="arithmatex">\(s_z\)</span> in the x, y, and z directions, respectively:</p>
+<div class="arithmatex">\[
+\mathbf{S} = \begin{pmatrix}
+s_x &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; s_y &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; s_z &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<h3 id="diagram-for-transformations">Diagram for Transformations</h3>
+<p>Consider the transformation of a vector by translation, rotation, and scaling:</p>
+<p><img alt="Transformations" src="https://i.imgur.com/Wc7Ew3M.png" /></p>
+<h3 id="7-homogeneous-coordinates">7. Homogeneous Coordinates</h3>
+<p>In computer graphics, homogeneous coordinates are used to represent points in projective space. A 3D point <span class="arithmatex">\((x, y, z)\)</span> can be represented in homogeneous coordinates as ((x, y, z, </p>
+<p>1)). This allows for the use of 4x4 matrices to perform transformations.</p>
+<h3 id="8-combining-transformations">8. Combining Transformations</h3>
+<p>Transformations can be combined by multiplying their matrices. For a combination of translation, rotation, and scaling:</p>
+<div class="arithmatex">\[
+\mathbf{M} = \mathbf{T} \cdot \mathbf{R} \cdot \mathbf{S}
+\]</div>
+<h3 id="9-perspective-projection">9. Perspective Projection</h3>
+<p>A perspective projection matrix projects 3D points onto a 2D plane, simulating the effect of a camera lens. For a perspective projection with a field of view <span class="arithmatex">\(fov\)</span>, aspect ratio <span class="arithmatex">\(a\)</span>, near plane <span class="arithmatex">\(n\)</span>, and far plane <span class="arithmatex">\(f\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{P} = \begin{pmatrix}
+\frac{1}{a \tan \frac{fov}{2}} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \frac{1}{\tan \frac{fov}{2}} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{f + n}{n - f} &amp; \frac{2fn}{n - f} \\
+0 &amp; 0 &amp; -1 &amp; 0
+\end{pmatrix}
+\]</div>
+<h3 id="diagram-for-perspective-projection">Diagram for Perspective Projection</h3>
+<p>Consider the projection of a 3D point onto a 2D plane:</p>
+<p><img alt="Perspective Projection" src="https://i.imgur.com/DsL7RAG.png" /></p>
+<h3 id="10-applications-in-game-development">10. Applications in Game Development</h3>
+<h4 id="graphics_1">Graphics</h4>
+<ul>
+<li><strong>Model Transformations</strong>: Transforming models from their local space to world space.</li>
+<li><strong>Camera Transformations</strong>: Transforming points from world space to camera space.</li>
+<li><strong>Projection</strong>: Projecting 3D points onto the 2D screen.</li>
+</ul>
+<h4 id="physics">Physics</h4>
+<ul>
+<li><strong>Rigid Body Transformations</strong>: Applying translations and rotations to simulate the movement of objects.</li>
+</ul>
+<h4 id="ai_1">AI</h4>
+<ul>
+<li><strong>Pathfinding</strong>: Transforming points and vectors to navigate through 3D space.</li>
+</ul>
+<p>Understanding matrix mathematics is crucial for implementing these and many other systems in game development. Mastering matrix operations enables developers to efficiently perform complex transformations and render 3D scenes accurately.</p>
+<h2 id="3-transformation-pipeline">3. Transformation Pipeline</h2>
+<p>The transformation pipeline is a critical concept in 3D graphics and game development. It involves transforming 3D objects from their local object space to the 2D screen space for rendering. The transformation pipeline consists of several stages, including model transformation, view transformation, projection transformation, and viewport transformation. Each stage involves applying specific mathematical operations, primarily using matrices. Here's a detailed explanation of each stage with diagrams and equations.</p>
+<h3 id="1-model-transformation">1. Model Transformation</h3>
+<p>The model transformation (also known as the world transformation) converts object coordinates from local object space to world space. This involves translating, rotating, and scaling the object.</p>
+<h4 id="translation_1">Translation</h4>
+<p>To translate an object by a vector <span class="arithmatex">\(\mathbf{T} = (T_x, T_y, T_z)\)</span>, we use the translation matrix:</p>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{translate}} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; T_x \\
+0 &amp; 1 &amp; 0 &amp; T_y \\
+0 &amp; 0 &amp; 1 &amp; T_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<h4 id="rotation_1">Rotation</h4>
+<p>To rotate an object around the x-axis, y-axis, and z-axis by angles <span class="arithmatex">\(\theta_x\)</span>, <span class="arithmatex">\(\theta_y\)</span>, and <span class="arithmatex">\(\theta_z\)</span> respectively, we use the rotation matrices:</p>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{rotate}_x} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \cos\theta_x &amp; -\sin\theta_x &amp; 0 \\
+0 &amp; \sin\theta_x &amp; \cos\theta_x &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{rotate}_y} =
+\begin{bmatrix}
+\cos\theta_y &amp; 0 &amp; \sin\theta_y &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+-\sin\theta_y &amp; 0 &amp; \cos\theta_y &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{rotate}_z} =
+\begin{bmatrix}
+\cos\theta_z &amp; -\sin\theta_z &amp; 0 &amp; 0 \\
+\sin\theta_z &amp; \cos\theta_z &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<h4 id="scaling_1">Scaling</h4>
+<p>To scale an object by factors <span class="arithmatex">\(S_x\)</span>, <span class="arithmatex">\(S_y\)</span>, and <span class="arithmatex">\(S_z\)</span>, we use the scaling matrix:</p>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{scale}} =
+\begin{bmatrix}
+S_x &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; S_y &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; S_z &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<h3 id="diagram-of-model-transformation">Diagram of Model Transformation</h3>
+<p><img alt="Model Transformation" src="https://i.imgur.com/8AKpIVD.png" /></p>
+<h3 id="2-view-transformation">2. View Transformation</h3>
+<p>The view transformation (also known as the camera transformation) converts coordinates from world space to camera (view) space. This involves positioning and orienting the camera in the scene.</p>
+<h4 id="camera-transformation-matrix">Camera Transformation Matrix</h4>
+<p>The camera transformation is typically defined by the camera's position <span class="arithmatex">\(\mathbf{C}\)</span>, the look-at point <span class="arithmatex">\(\mathbf{L}\)</span>, and the up vector <span class="arithmatex">\(\mathbf{U}\)</span>.</p>
+<ol>
+<li>
+<p>Compute the forward, right, and up vectors:</p>
+<div class="arithmatex">\[
+\mathbf{F} = \frac{\mathbf{L} - \mathbf{C}}{|\mathbf{L} - \mathbf{C}|}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{R} = \frac{\mathbf{F} \times \mathbf{U}}{|\mathbf{F} \times \mathbf{U}|}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{U}' = \mathbf{R} \times \mathbf{F}
+\]</div>
+</li>
+<li>
+<p>Construct the view matrix:</p>
+</li>
+</ol>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{view}} =
+\begin{bmatrix}
+\mathbf{R}_x &amp; \mathbf{R}_y &amp; \mathbf{R}_z &amp; -\mathbf{R} \cdot \mathbf{C} \\
+\mathbf{U}'_x &amp; \mathbf{U}'_y &amp; \mathbf{U}'_z &amp; -\mathbf{U}' \cdot \mathbf{C} \\
+-\mathbf{F}_x &amp; -\mathbf{F}_y &amp; -\mathbf{F}_z &amp; \mathbf{F} \cdot \mathbf{C} \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<h3 id="diagram-of-view-transformation">Diagram of View Transformation</h3>
+<p><img alt="View Transformation" src="https://i.imgur.com/VRwLsL6.png" /></p>
+<h3 id="3-projection-transformation">3. Projection Transformation</h3>
+<p>The projection transformation converts coordinates from camera space to clip space. There are two main types of projection: orthographic and perspective.</p>
+<h4 id="orthographic-projection">Orthographic Projection</h4>
+<p>For orthographic projection, objects are projected directly onto the screen without perspective distortion.</p>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{ortho}} =
+\begin{bmatrix}
+\frac{2}{r-l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\
+0 &amp; \frac{2}{t-b} &amp; 0 &amp; -\frac{t+b}{t-b} \\
+0 &amp; 0 &amp; \frac{-2}{f-n} &amp; -\frac{f+n}{f-n} \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>where <span class="arithmatex">\(l, r, b, t, n, f\)</span> are the left, right, bottom, top, near, and far clipping planes, respectively.</p>
+<h4 id="perspective-projection">Perspective Projection</h4>
+<p>For perspective projection, objects farther from the camera appear smaller, creating a sense of depth.</p>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{persp}} =
+\begin{bmatrix}
+\frac{2n}{r-l} &amp; 0 &amp; \frac{r+l}{r-l} &amp; 0 \\
+0 &amp; \frac{2n}{t-b} &amp; \frac{t+b}{t-b} &amp; 0 \\
+0 &amp; 0 &amp; \frac{-(f+n)}{f-n} &amp; \frac{-2fn}{f-n} \\
+0 &amp; 0 &amp; -1 &amp; 0
+\end{bmatrix}
+\]</div>
+<h3 id="diagram-of-projection-transformation">Diagram of Projection Transformation</h3>
+<p><img alt="Projection Transformation" src="https://i.imgur.com/VItZqCq.png" /></p>
+<h3 id="4-viewport-transformation">4. Viewport Transformation</h3>
+<p>The viewport transformation converts coordinates from normalized device coordinates (NDC) to screen space coordinates, which correspond to the actual pixels on the screen.</p>
+<h4 id="viewport-transformation-matrix">Viewport Transformation Matrix</h4>
+<p>Given a viewport defined by the origin <span class="arithmatex">\((x, y)\)</span> and dimensions <span class="arithmatex">\((width, height)\)</span>, the transformation is:</p>
+<div class="arithmatex">\[
+\mathbf{M}_{\text{viewport}} =
+\begin{bmatrix}
+\frac{width}{2} &amp; 0 &amp; 0 &amp; x + \frac{width}{2} \\
+0 &amp; \frac{height}{2} &amp; 0 &amp; y + \frac{height}{2} \\
+0 &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2} \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<h3 id="diagram-of-viewport-transformation">Diagram of Viewport Transformation</h3>
+<p><img alt="Viewport Transformation" src="https://i.imgur.com/kA2dJ98.png" /></p>
+<h3 id="5-full-transformation-pipeline">5. Full Transformation Pipeline</h3>
+<p>Combining all the transformations, the full transformation pipeline can be represented as:</p>
+<div class="arithmatex">\[
+\mathbf{P}_{\text{final}} = \mathbf{M}_{\text{viewport}} \cdot \mathbf{M}_{\text{projection}} \cdot \mathbf{M}_{\text{view}} \cdot \mathbf{M}_{\text{model}} \cdot \mathbf{P}_{\text{object}}
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{P}_{\text{object}}\)</span> is a point in object space, and <span class="arithmatex">\(\mathbf{P}_{\text{final}}\)</span> is the corresponding point in screen space.</p>
+<h3 id="diagram-of-the-full-transformation-pipeline">Diagram of the Full Transformation Pipeline</h3>
+<p><img alt="Full Transformation Pipeline" src="https://i.imgur.com/gy4QTSd.png" /></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Understanding the transformation pipeline is crucial for rendering 3D scenes accurately in game development. Each stage of the pipeline—model, view, projection, and viewport transformations—plays a specific role in converting object coordinates from local space to screen space. Mastery of these concepts enables developers to create visually accurate and immersive 3D environments.</p>
+<h2 id="4-quaternions">4. Quaternions</h2>
+<p>Quaternions are an essential part of game development, especially for representing and manipulating rotations in 3D space. They offer several advantages over Euler angles and rotation matrices, such as avoiding gimbal lock and providing smooth interpolation. Here's a detailed explanation of quaternions, including their properties, operations, and applications in game development.</p>
+<h3 id="1-quaternion-representation">1. Quaternion Representation</h3>
+<p>A quaternion is a four-dimensional complex number that can be used to encode 3D rotations. It is typically represented as:</p>
+<div class="arithmatex">\[
+\mathbf{q} = w + xi + yj + zk
+\]</div>
+<p>where <span class="arithmatex">\(w\)</span> is the scalar part and <span class="arithmatex">\(x, y, z\)</span> are the vector parts. Quaternions are often written in the form:</p>
+<div class="arithmatex">\[
+\mathbf{q} = \begin{pmatrix} w \\ x \\ y \\ z \end{pmatrix}
+\]</div>
+<h3 id="2-quaternion-operations">2. Quaternion Operations</h3>
+<h4 id="quaternion-addition">Quaternion Addition</h4>
+<p>Quaternions can be added component-wise, similar to vectors:</p>
+<div class="arithmatex">\[
+\mathbf{q}_1 + \mathbf{q}_2 = \begin{pmatrix} w_1 \\ x_1 \\ y_1 \\ z_1 \end{pmatrix} + \begin{pmatrix} w_2 \\ x_2 \\ y_2 \\ z_2 \end{pmatrix} = \begin{pmatrix} w_1 + w_2 \\ x_1 + x_2 \\ y_1 + y_2 \\ z_1 + z_2 \end{pmatrix}
+\]</div>
+<h4 id="scalar-multiplication">Scalar Multiplication</h4>
+<p>A quaternion can be multiplied by a scalar, scaling each component:</p>
+<div class="arithmatex">\[
+k \mathbf{q} = k \begin{pmatrix} w \\ x \\ y \\ z \end{pmatrix} = \begin{pmatrix} kw \\ kx \\ ky \\ kz \end{pmatrix}
+\]</div>
+<h4 id="quaternion-multiplication">Quaternion Multiplication</h4>
+<p>The multiplication of two quaternions <span class="arithmatex">\(\mathbf{q}_1\)</span> and <span class="arithmatex">\(\mathbf{q}_2\)</span> results in another quaternion. This operation is non-commutative, meaning <span class="arithmatex">\(\mathbf{q}_1 \mathbf{q}_2 \neq \mathbf{q}_2 \mathbf{q}_1\)</span>. The product <span class="arithmatex">\(\mathbf{q}_1 \mathbf{q}_2\)</span> is given by:</p>
+<div class="arithmatex">\[
+\mathbf{q}_1 \mathbf{q}_2 = \begin{pmatrix} w_1 \\ x_1 \\ y_1 \\ z_1 \end{pmatrix} \begin{pmatrix} w_2 \\ x_2 \\ y_2 \\ z_2 \end{pmatrix} = \begin{pmatrix} w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2 \\ w_1x_2 + x_1w_2 + y_1z_2 - z_1y_2 \\ w_1y_2 - x_1z_2 + y_1w_2 + z_1x_2 \\ w_1z_2 + x_1y_2 - y_1x_2 + z_1w_2 \end{pmatrix}
+\]</div>
+<h4 id="quaternion-conjugate">Quaternion Conjugate</h4>
+<p>The conjugate of a quaternion <span class="arithmatex">\(\mathbf{q} = \begin{pmatrix} w \\ x \\ y \\ z \end{pmatrix}\)</span> is given by:</p>
+<div class="arithmatex">\[
+\mathbf{q}^* = \begin{pmatrix} w \\ -x \\ -y \\ -z \end{pmatrix}
+\]</div>
+<h4 id="quaternion-norm">Quaternion Norm</h4>
+<p>The norm (or magnitude) of a quaternion <span class="arithmatex">\(\mathbf{q} = \begin{pmatrix} w \\ x \\ y \\ z \end{pmatrix}\)</span> is given by:</p>
+<div class="arithmatex">\[
+\|\mathbf{q}\| = \sqrt{w^2 + x^2 + y^2 + z^2}
+\]</div>
+<h4 id="quaternion-inverse">Quaternion Inverse</h4>
+<p>The inverse of a quaternion <span class="arithmatex">\(\mathbf{q}\)</span> is given by:</p>
+<div class="arithmatex">\[
+\mathbf{q}^{-1} = \frac{\mathbf{q}^*}{\|\mathbf{q}\|^2}
+\]</div>
+<h3 id="3-unit-quaternions">3. Unit Quaternions</h3>
+<p>Unit quaternions have a norm of 1 and are used to represent rotations. For a quaternion <span class="arithmatex">\(\mathbf{q} = \begin{pmatrix} w \\ x \\ y \\ z \end{pmatrix}\)</span> to be a unit quaternion:</p>
+<div class="arithmatex">\[
+\|\mathbf{q}\| = \sqrt{w^2 + x^2 + y^2 + z^2} = 1
+\]</div>
+<h3 id="4-rotations-using-quaternions">4. Rotations Using Quaternions</h3>
+<p>A rotation by an angle <span class="arithmatex">\(\theta\)</span> around a unit vector <span class="arithmatex">\(\mathbf{v} = \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix}\)</span> can be represented by a unit quaternion:</p>
+<div class="arithmatex">\[
+\mathbf{q} = \begin{pmatrix} \cos \frac{\theta}{2} \\ v_x \sin \frac{\theta}{2} \\ v_y \sin \frac{\theta}{2} \\ v_z \sin \frac{\theta}{2} \end{pmatrix}
+\]</div>
+<h3 id="diagram-for-quaternion-rotation">Diagram for Quaternion Rotation</h3>
+<p>Consider a vector <span class="arithmatex">\(\mathbf{p} = \begin{pmatrix} p_x \\ p_y \\ p_z \end{pmatrix}\)</span> being rotated by a quaternion <span class="arithmatex">\(\mathbf{q}\)</span>:</p>
+<p><img alt="Quaternion Rotation" src="https://i.imgur.com/fOE2Zw5.png" /></p>
+<h3 id="5-applying-quaternion-rotation">5. Applying Quaternion Rotation</h3>
+<p>To rotate a vector <span class="arithmatex">\(\mathbf{p}\)</span> by a quaternion <span class="arithmatex">\(\mathbf{q}\)</span>:</p>
+<ol>
+<li>Convert <span class="arithmatex">\(\mathbf{p}\)</span> into a pure quaternion: <span class="arithmatex">\(\mathbf{p} = \begin{pmatrix} 0 \\ p_x \\ p_y \\ p_z \end{pmatrix}\)</span></li>
+<li>Compute the rotated vector using quaternion multiplication: <span class="arithmatex">\(\mathbf{p}' = \mathbf{q} \mathbf{p} \mathbf{q}^{-1}\)</span></li>
+<li>Extract the vector part of <span class="arithmatex">\(\mathbf{p}'\)</span> for the rotated vector.</li>
+</ol>
+<h3 id="6-spherical-linear-interpolation-slerp">6. Spherical Linear Interpolation (SLERP)</h3>
+<p>SLERP is used for smooth interpolation between two quaternions. For two unit quaternions <span class="arithmatex">\(\mathbf{q}_0\)</span> and <span class="arithmatex">\(\mathbf{q}_1\)</span> and an interpolation parameter <span class="arithmatex">\(t\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{q}(t) = \frac{\sin((1-t) \Omega)}{\sin \Omega} \mathbf{q}_0 + \frac{\sin(t \Omega)}{\sin \Omega} \mathbf{q}_1
+\]</div>
+<p>where <span class="arithmatex">\(\Omega = \cos^{-1}(\mathbf{q}_0 \cdot \mathbf{q}_1)\)</span>.</p>
+<h3 id="diagram-for-slerp">Diagram for SLERP</h3>
+<p>Consider interpolating between two quaternions <span class="arithmatex">\(\mathbf{q}_0\)</span> and <span class="arithmatex">\(\mathbf{q}_1\)</span>:</p>
+<p><img alt="SLERP" src="https://i.imgur.com/XU6ZnnS.png" /></p>
+<h3 id="7-applications-in-game-development">7. Applications in Game Development</h3>
+<h4 id="smooth-rotations">Smooth Rotations</h4>
+<p>Quaternions are used to smoothly rotate objects without experiencing gimbal lock, which can occur with Euler angles.</p>
+<h4 id="camera-controls">Camera Controls</h4>
+<p>Quaternions are used for camera rotations, providing smooth and intuitive control.</p>
+<h4 id="skeletal-animation">Skeletal Animation</h4>
+<p>Quaternions are used to interpolate between bone rotations in skeletal animations, resulting in smooth animations.</p>
+<h4 id="physics-simulations_1">Physics Simulations</h4>
+<p>Quaternions are used to represent and compute rotations in physics simulations, ensuring accurate and efficient computations.</p>
+<h3 id="conclusion_1">Conclusion</h3>
+<p>Quaternions are a powerful tool in game development for representing and manipulating rotations. They provide advantages over other methods, such as avoiding gimbal lock and enabling smooth interpolation. Understanding quaternion operations and their applications is crucial for implementing various systems and mechanics in 3D games.</p>
+<h2 id="5-ray-casting">5. Ray Casting</h2>
+<p>Raycasting is a fundamental technique in game development used for various purposes, such as collision detection, visibility determination, picking objects in a 3D environment, and more. Here's an in-depth look at the mathematics behind raycasting, complete with diagrams and equations.</p>
+<h3 id="1-basic-concepts">1. Basic Concepts</h3>
+<p>Raycasting involves shooting a ray from a point in a specified direction and determining what objects the ray intersects.</p>
+<h4 id="components-of-a-ray">Components of a Ray</h4>
+<p>A ray is defined by an origin point <span class="arithmatex">\(\mathbf{O}\)</span> and a direction vector <span class="arithmatex">\(\mathbf{D}\)</span>.</p>
+<h3 id="diagram-of-a-ray">Diagram of a Ray</h3>
+<p><img alt="Ray Diagram" src="https://i.imgur.com/yPDCwGd.png" /></p>
+<h3 id="2-ray-equation">2. Ray Equation</h3>
+<p>The parametric equation of a ray is given by:</p>
+<div class="arithmatex">\[
+\mathbf{R}(t) = \mathbf{O} + t\mathbf{D}, \quad t \geq 0
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{R}(t)\)</span> is the position on the ray at parameter <span class="arithmatex">\(t\)</span>.</li>
+<li><span class="arithmatex">\(\mathbf{O}\)</span> is the origin of the ray.</li>
+<li><span class="arithmatex">\(\mathbf{D}\)</span> is the direction vector of the ray.</li>
+<li><span class="arithmatex">\(t\)</span> is a scalar parameter.</li>
+</ul>
+<h3 id="3-ray-plane-intersection">3. Ray-Plane Intersection</h3>
+<p>To determine where a ray intersects a plane, we use the plane equation and solve for the parameter <span class="arithmatex">\(t\)</span>.</p>
+<h4 id="plane-equation">Plane Equation</h4>
+<p>A plane is defined by a point <span class="arithmatex">\(\mathbf{P_0}\)</span> on the plane and a normal vector <span class="arithmatex">\(\mathbf{N}\)</span>. The plane equation is:</p>
+<div class="arithmatex">\[
+(\mathbf{P} - \mathbf{P_0}) \cdot \mathbf{N} = 0
+\]</div>
+<h3 id="diagram-of-ray-plane-intersection">Diagram of Ray-Plane Intersection</h3>
+<p><img alt="Ray-Plane Intersection" src="https://i.imgur.com/U1tBoMJ.png" /></p>
+<h4 id="intersection-calculation">Intersection Calculation</h4>
+<p>Substitute the ray equation into the plane equation:</p>
+<div class="arithmatex">\[
+(\mathbf{O} + t\mathbf{D} - \mathbf{P_0}) \cdot \mathbf{N} = 0
+\]</div>
+<p>Solve for <span class="arithmatex">\(t\)</span>:</p>
+<div class="arithmatex">\[
+t = \frac{(\mathbf{P_0} - \mathbf{O}) \cdot \mathbf{N}}{\mathbf{D} \cdot \mathbf{N}}
+\]</div>
+<ul>
+<li>If <span class="arithmatex">\(\mathbf{D} \cdot \mathbf{N} = 0\)</span>, the ray is parallel to the plane and does not intersect it.</li>
+</ul>
+<h3 id="4-ray-sphere-intersection">4. Ray-Sphere Intersection</h3>
+<p>To determine where a ray intersects a sphere, we use the sphere equation and solve for the parameter <span class="arithmatex">\(t\)</span>.</p>
+<h4 id="sphere-equation">Sphere Equation</h4>
+<p>A sphere is defined by a center point <span class="arithmatex">\(\mathbf{C}\)</span> and a radius <span class="arithmatex">\(r\)</span>. The sphere equation is:</p>
+<div class="arithmatex">\[
+|\mathbf{P} - \mathbf{C}|^2 = r^2
+\]</div>
+<h3 id="diagram-of-ray-sphere-intersection">Diagram of Ray-Sphere Intersection</h3>
+<p><img alt="Ray-Sphere Intersection" src="https://i.imgur.com/wMoxP5d.png" /></p>
+<h4 id="intersection-calculation_1">Intersection Calculation</h4>
+<p>Substitute the ray equation into the sphere equation:</p>
+<div class="arithmatex">\[
+|\mathbf{O} + t\mathbf{D} - \mathbf{C}|^2 = r^2
+\]</div>
+<p>This results in a quadratic equation:</p>
+<div class="arithmatex">\[
+(\mathbf{D} \cdot \mathbf{D})t^2 + 2(\mathbf{D} \cdot (\mathbf{O} - \mathbf{C}))t + (\mathbf{O} - \mathbf{C}) \cdot (\mathbf{O} - \mathbf{C}) - r^2 = 0
+\]</div>
+<p>Solve the quadratic equation for <span class="arithmatex">\(t\)</span>:</p>
+<div class="arithmatex">\[
+at^2 + bt + c = 0
+\]</div>
+<p>where:</p>
+<div class="arithmatex">\[
+a = \mathbf{D} \cdot \mathbf{D}
+\]</div>
+<div class="arithmatex">\[
+b = 2\mathbf{D} \cdot (\mathbf{O} - \mathbf{C})
+\]</div>
+<div class="arithmatex">\[
+c = (\mathbf{O} - \mathbf{C}) \cdot (\mathbf{O} - \mathbf{C}) - r^2
+\]</div>
+<p>Use the quadratic formula:
+[
+t = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+]</p>
+<ul>
+<li>If <span class="arithmatex">\(b^2 - 4ac &lt; 0\)</span>, there is no intersection.</li>
+<li>If <span class="arithmatex">\(b^2 - 4ac = 0\)</span>, there is one intersection (the ray is tangent to the sphere).</li>
+<li>If <span class="arithmatex">\(b^2 - 4ac &gt; 0\)</span>, there are two intersections.</li>
+</ul>
+<h3 id="5-ray-aabb-axis-aligned-bounding-box-intersection">5. Ray-AABB (Axis-Aligned Bounding Box) Intersection</h3>
+<p>An Axis-Aligned Bounding Box (AABB) is a box aligned with the coordinate axes, used for simple and efficient collision detection.</p>
+<h3 id="diagram-of-ray-aabb-intersection">Diagram of Ray-AABB Intersection</h3>
+<p><img alt="Ray-AABB Intersection" src="https://i.imgur.com/qfn8WGb.png" /></p>
+<h4 id="intersection-calculation_2">Intersection Calculation</h4>
+<p>For each pair of parallel planes defining the AABB (x, y, and z planes), compute the intersection points:</p>
+<div class="arithmatex">\[
+t_{min} = \max(t_{x_{min}}, t_{y_{min}}, t_{z_{min}})
+\]</div>
+<div class="arithmatex">\[
+t_{max} = \min(t_{x_{max}}, t_{y_{max}}, t_{z_{max}})
+\]</div>
+<ul>
+<li>If <span class="arithmatex">\(t_{min} &gt; t_{max}\)</span>, there is no intersection.</li>
+<li>If <span class="arithmatex">\(t_{min} \leq t_{max}\)</span>, there is an intersection within the AABB.</li>
+</ul>
+<h4 id="compute-t-for-each-axis">Compute <span class="arithmatex">\(t\)</span> for each axis:</h4>
+<p>For the x-axis:</p>
+<div class="arithmatex">\[
+t_{x_{min}} = \frac{x_{min} - O_x}{D_x}, \quad t_{x_{max}} = \frac{x_{max} - O_x}{D_x}
+\]</div>
+<p>For the y-axis:</p>
+<div class="arithmatex">\[
+t_{y_{min}} = \frac{y_{min} - O_y}{D_y}, \quad t_{y_{max}} = \frac{y_{max} - O_y}{D_y}
+\]</div>
+<p>For the z-axis:</p>
+<div class="arithmatex">\[
+t_{z_{min}} = \frac{z_{min} - O_z}{D_z}, \quad t_{z_{max}} = \frac{z_{max} - O_z}{D_z}
+\]</div>
+<h3 id="6-applications-in-game-development">6. Applications in Game Development</h3>
+<h4 id="collision-detection">Collision Detection</h4>
+<p>Raycasting is commonly used for collision detection in games, such as detecting whether a bullet hits a target or determining if a character can move to a new location.</p>
+<h4 id="visibility-determination">Visibility Determination</h4>
+<p>Raycasting helps in determining the visibility of objects in a scene, such as whether an enemy is visible to the player or if a light source illuminates a surface.</p>
+<h4 id="picking-objects">Picking Objects</h4>
+<p>In 3D editors and games, raycasting is used to select objects with the mouse. A ray is cast from the camera through the mouse cursor into the scene to determine which object is under the cursor.</p>
+<h4 id="shadow-mapping">Shadow Mapping</h4>
+<p>Raycasting is used to determine whether a point is in shadow by casting a ray from the point to the light source and checking for intersections with other objects.</p>
+<h3 id="conclusion_2">Conclusion</h3>
+<p>Raycasting is a powerful technique in game development for a wide range of applications, from collision detection to visibility determination. Understanding the mathematics behind raycasting, including ray-plane, ray-sphere, and ray-AABB intersections, allows developers to implement efficient and effective raycasting algorithms in their games.</p>
+<h2 id="6-bounding-volume-hierarchies">6. Bounding Volume Hierarchies</h2>
+<p>Used for efficient collision detection and spatial queries.</p>
+<p>Diagram: A tree structure representing nested bounding volumes (spheres or boxes) around a complex 3D model.</p>
+<h2 id="7-projection">7. Projection</h2>
+<p>Projection mathematics is fundamental in game development for rendering 3D scenes onto a 2D screen. The process involves transforming 3D coordinates to 2D coordinates using projection matrices. There are two primary types of projections: orthographic and perspective. Here, we will explain both types, their corresponding projection matrices, and their applications.</p>
+<h3 id="1-orthographic-projection">1. Orthographic Projection</h3>
+<p>Orthographic projection maps 3D points directly to 2D points without considering depth. This type of projection is often used in technical and engineering applications, as well as for 2D games that require a top-down or side view.</p>
+<h4 id="orthographic-projection-matrix">Orthographic Projection Matrix</h4>
+<p>The orthographic projection matrix transforms a 3D point <span class="arithmatex">\((x, y, z)\)</span> to a 2D point <span class="arithmatex">\((x', y')\)</span> based on specified view volume dimensions (left, right, bottom, top, near, far).</p>
+<div class="arithmatex">\[
+\mathbf{P_{ortho}} = \begin{pmatrix}
+\frac{2}{r-l} &amp; 0 &amp; 0 &amp; -\frac{r+l}{r-l} \\
+0 &amp; \frac{2}{t-b} &amp; 0 &amp; -\frac{t+b}{t-b} \\
+0 &amp; 0 &amp; \frac{2}{n-f} &amp; -\frac{n+f}{n-f} \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(l\)</span> = left</li>
+<li><span class="arithmatex">\(r\)</span> = right</li>
+<li><span class="arithmatex">\(b\)</span> = bottom</li>
+<li><span class="arithmatex">\(t\)</span> = top</li>
+<li><span class="arithmatex">\(n\)</span> = near</li>
+<li><span class="arithmatex">\(f\)</span> = far</li>
+</ul>
+<h3 id="diagram-for-orthographic-projection">Diagram for Orthographic Projection</h3>
+<p>Consider a cube being projected orthographically onto a 2D plane:</p>
+<p><img alt="Orthographic Projection" src="https://i.imgur.com/rL9aYsX.png" /></p>
+<h3 id="2-perspective-projection">2. Perspective Projection</h3>
+<p>Perspective projection simulates how the human eye perceives the world, where objects farther from the viewer appear smaller. This type of projection is essential for realistic 3D rendering in games.</p>
+<h4 id="perspective-projection-matrix">Perspective Projection Matrix</h4>
+<p>The perspective projection matrix transforms a 3D point <span class="arithmatex">\((x, y, z)\)</span> to a 2D point <span class="arithmatex">\((x', y')\)</span> by considering depth. The matrix is defined based on the field of view (fov), aspect ratio (a), near plane (n), and far plane (f).</p>
+<div class="arithmatex">\[
+\mathbf{P_{persp}} = \begin{pmatrix}
+\frac{1}{a \tan \frac{fov}{2}} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \frac{1}{\tan \frac{fov}{2}} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{f + n}{n - f} &amp; \frac{2fn}{n - f} \\
+0 &amp; 0 &amp; -1 &amp; 0
+\end{pmatrix}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(fov\)</span> = field of view</li>
+<li><span class="arithmatex">\(a\)</span> = aspect ratio</li>
+<li><span class="arithmatex">\(n\)</span> = near plane</li>
+<li><span class="arithmatex">\(f\)</span> = far plane</li>
+</ul>
+<h3 id="diagram-for-perspective-projection_1">Diagram for Perspective Projection</h3>
+<p>Consider a pyramid being projected perspectively onto a 2D plane:</p>
+<p><img alt="Perspective Projection" src="https://i.imgur.com/4kPyg9n.png" /></p>
+<h3 id="3-view-transformation">3. View Transformation</h3>
+<p>Before applying projection, we often need to transform points from world space to camera space using a view matrix. This matrix is constructed using the camera's position, target, and up vector.</p>
+<h4 id="view-matrix">View Matrix</h4>
+<p>Given a camera at position <span class="arithmatex">\(\mathbf{C}\)</span>, looking at target <span class="arithmatex">\(\mathbf{T}\)</span>, with an up vector <span class="arithmatex">\(\mathbf{U}\)</span>:</p>
+<ol>
+<li>Compute the forward vector <span class="arithmatex">\(\mathbf{F} = \frac{\mathbf{T} - \mathbf{C}}{\|\mathbf{T} - \mathbf{C}\|}\)</span></li>
+<li>Compute the right vector <span class="arithmatex">\(\mathbf{R} = \frac{\mathbf{U} \times \mathbf{F}}{\|\mathbf{U} \times \mathbf{F}\|}\)</span></li>
+<li>Compute the up vector <span class="arithmatex">\(\mathbf{U}' = \mathbf{F} \times \mathbf{R}\)</span></li>
+</ol>
+<p>The view matrix <span class="arithmatex">\(\mathbf{V}\)</span> is then:</p>
+<div class="arithmatex">\[
+\mathbf{V} = \begin{pmatrix}
+\mathbf{R_x} &amp; \mathbf{R_y} &amp; \mathbf{R_z} &amp; -\mathbf{R} \cdot \mathbf{C} \\
+\mathbf{U_x'} &amp; \mathbf{U_y'} &amp; \mathbf{U_z'} &amp; -\mathbf{U'} \cdot \mathbf{C} \\
+\mathbf{F_x} &amp; \mathbf{F_y} &amp; \mathbf{F_z} &amp; -\mathbf{F} \cdot \mathbf{C} \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<h3 id="4-model-transformation">4. Model Transformation</h3>
+<p>To position and orient objects in the world, we use model matrices, which combine translation, rotation, and scaling transformations.</p>
+<h4 id="model-matrix">Model Matrix</h4>
+<p>For an object at position <span class="arithmatex">\(\mathbf{P}\)</span>, rotated by quaternion <span class="arithmatex">\(\mathbf{Q}\)</span>, and scaled by <span class="arithmatex">\(\mathbf{S}\)</span>:</p>
+<ol>
+<li><strong>Translation Matrix</strong>:</li>
+</ol>
+<div class="arithmatex">\[
+\mathbf{T} = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; P_x \\
+0 &amp; 1 &amp; 0 &amp; P_y \\
+0 &amp; 0 &amp; 1 &amp; P_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<ol>
+<li><strong>Rotation Matrix</strong> (from quaternion <span class="arithmatex">\(\mathbf{Q}\)</span>):</li>
+</ol>
+<div class="arithmatex">\[
+\mathbf{R} = \begin{pmatrix}
+1 - 2(y^2 + z^2) &amp; 2(xy - wz) &amp; 2(xz + wy) &amp; 0 \\
+2(xy + wz) &amp; 1 - 2(x^2 + z^2) &amp; 2(yz - wx) &amp; 0 \\
+2(xz - wy) &amp; 2(yz + wx) &amp; 1 - 2(x^2 + y^2) &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<ol>
+<li><strong>Scaling Matrix</strong>:</li>
+</ol>
+<div class="arithmatex">\[
+\mathbf{S} = \begin{pmatrix}
+S_x &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; S_y &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; S_z &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</div>
+<ol>
+<li><strong>Combined Model Matrix</strong>:</li>
+</ol>
+<div class="arithmatex">\[
+\mathbf{M} = \mathbf{T} \mathbf{R} \mathbf{S}
+\]</div>
+<h3 id="5-complete-transformation-pipeline">5. Complete Transformation Pipeline</h3>
+<p>To transform a point from model space to screen space, we apply the model, view, and projection matrices sequentially:</p>
+<div class="arithmatex">\[
+\mathbf{P_{screen}} = \mathbf{P_{proj}} \mathbf{V} \mathbf{M} \mathbf{P_{model}}
+\]</div>
+<h3 id="diagram-for-complete-transformation-pipeline">Diagram for Complete Transformation Pipeline</h3>
+<p>Consider the complete transformation of a 3D point through model, view, and projection transformations:</p>
+<p><img alt="Complete Transformation Pipeline" src="https://i.imgur.com/jLojq4L.png" /></p>
+<h3 id="6-perspective-divide">6. Perspective Divide</h3>
+<p>After applying the projection matrix, we perform the perspective divide to convert from homogeneous coordinates to 2D screen coordinates:</p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+x' \\
+y' \\
+z' \\
+w'
+\end{pmatrix}
+\rightarrow \begin{pmatrix}
+\frac{x'}{w'} \\
+\frac{y'}{w'} \\
+\frac{z'}{w'}
+\end{pmatrix}
+\]</div>
+<h3 id="7-normalized-device-coordinates-ndc">7. Normalized Device Coordinates (NDC)</h3>
+<p>The result of the perspective divide is in normalized device coordinates (NDC), where the coordinates range from -1 to 1. These coordinates are then mapped to screen space based on the screen resolution.</p>
+<h3 id="applications-in-game-development">Applications in Game Development</h3>
+<ol>
+<li><strong>Rendering 3D Scenes</strong>: Using projection matrices to render 3D objects onto a 2D screen.</li>
+<li><strong>Camera Controls</strong>: Manipulating view matrices to simulate camera movement and orientation.</li>
+<li><strong>Object Transformations</strong>: Applying model matrices to position, rotate, and scale objects in the scene.</li>
+<li><strong>Frustum Culling</strong>: Using the projection matrix to determine which objects are within the camera's view and should be rendered.</li>
+</ol>
+<h3 id="conclusion_3">Conclusion</h3>
+<p>Understanding projection mathematics is crucial for game development, as it enables the accurate rendering of 3D scenes onto a 2D screen. Mastering orthographic and perspective projections, along with the complete transformation pipeline, allows developers to create immersive and visually compelling 3D games.</p>
+<h2 id="8-barycentric-coordinates">8. Barycentric Coordinates</h2>
+<p>Used for interpolation within triangles (e.g., for texture mapping).</p>
+<p>For a point P inside triangle ABC:
+P = αA + βB + γC, where α + β + γ = 1</p>
+<p>Diagram: A triangle with a point inside, showing how its position is determined by the barycentric coordinates.</p>
+<h2 id="curves">Curves</h2>
+<p>Curves are essential in game development for a variety of applications such as animations, camera paths, object trajectories, and more. Here, we will focus on two primary types of curves used in game development: Bézier curves and B-spline curves. We will explain their mathematics, provide equations, and illustrate with diagrams.</p>
+<h3 id="1-bezier-curves">1. Bézier Curves</h3>
+<p>Bézier curves are parametric curves frequently used in computer graphics and game development due to their simplicity and ease of use. They are defined by a set of control points.</p>
+<h4 id="linear-bezier-curve-degree-1">Linear Bézier Curve (Degree 1)</h4>
+<p>A linear Bézier curve is the simplest type, defined by two control points, <span class="arithmatex">\(\mathbf{P}_0\)</span> and <span class="arithmatex">\(\mathbf{P}_1\)</span>. The curve is a straight line between these points.</p>
+<p>The equation for a linear Bézier curve is:</p>
+<div class="arithmatex">\[
+\mathbf{B}(t) = (1-t) \mathbf{P}_0 + t \mathbf{P}_1, \quad t \in [0, 1]
+\]</div>
+<h3 id="diagram-of-linear-bezier-curve">Diagram of Linear Bézier Curve</h3>
+<p><img alt="Linear Bézier Curve" src="https://i.imgur.com/Zgp5HgF.png" /></p>
+<h4 id="quadratic-bezier-curve-degree-2">Quadratic Bézier Curve (Degree 2)</h4>
+<p>A quadratic Bézier curve is defined by three control points, <span class="arithmatex">\(\mathbf{P}_0\)</span>, <span class="arithmatex">\(\mathbf{P}_1\)</span>, and <span class="arithmatex">\(\mathbf{P}_2\)</span>. The equation is:</p>
+<div class="arithmatex">\[
+\mathbf{B}(t) = (1-t)^2 \mathbf{P}_0 + 2(1-t)t \mathbf{P}_1 + t^2 \mathbf{P}_2, \quad t \in [0, 1]
+\]</div>
+<h3 id="diagram-of-quadratic-bezier-curve">Diagram of Quadratic Bézier Curve</h3>
+<p><img alt="Quadratic Bézier Curve" src="https://i.imgur.com/s1AOqwb.png" /></p>
+<h4 id="cubic-bezier-curve-degree-3">Cubic Bézier Curve (Degree 3)</h4>
+<p>A cubic Bézier curve is defined by four control points, <span class="arithmatex">\(\mathbf{P}_0\)</span>, <span class="arithmatex">\(\mathbf{P}_1\)</span>, <span class="arithmatex">\(\mathbf{P}_2\)</span>, and <span class="arithmatex">\(\mathbf{P}_3\)</span>. The equation is:</p>
+<div class="arithmatex">\[
+\mathbf{B}(t) = (1-t)^3 \mathbf{P}_0 + 3(1-t)^2 t \mathbf{P}_1 + 3(1-t)t^2 \mathbf{P}_2 + t^3 \mathbf{P}_3, \quad t \in [0, 1]
+\]</div>
+<h3 id="diagram-of-cubic-bezier-curve">Diagram of Cubic Bézier Curve</h3>
+<p><img alt="Cubic Bézier Curve" src="https://i.imgur.com/OajqBuv.png" /></p>
+<h3 id="2-b-spline-curves">2. B-spline Curves</h3>
+<p>B-spline curves are a generalization of Bézier curves, providing more flexibility and local control over the shape of the curve. B-splines are defined by a set of control points and a degree <span class="arithmatex">\(d\)</span>.</p>
+<h4 id="basis-functions">Basis Functions</h4>
+<p>The B-spline basis functions <span class="arithmatex">\(N_{i,d}(t)\)</span> are defined recursively:</p>
+<ol>
+<li><strong>Degree 0 Basis Functions</strong>:</li>
+</ol>
+<div class="arithmatex">\[
+N_{i,0}(t) = \begin{cases}
+1, &amp; \text{if } u_i \leq t &lt; u_{i+1} \\
+0, &amp; \text{otherwise}
+\end{cases}
+\]</div>
+<ol>
+<li><strong>Degree d Basis Functions</strong>:</li>
+</ol>
+<div class="arithmatex">\[
+N_{i,d}(t) = \frac{t - u_i}{u_{i+d} - u_i} N_{i,d-1}(t) + \frac{u_{i+d+1} - t}{u_{i+d+1} - u_{i+1}} N_{i+1,d-1}(t)
+\]</div>
+<p>where <span class="arithmatex">\(u_i\)</span> are the knot vector values.</p>
+<h4 id="b-spline-curve-equation">B-spline Curve Equation</h4>
+<p>A B-spline curve is defined as:</p>
+<div class="arithmatex">\[
+\mathbf{C}(t) = \sum_{i=0}^{n} \mathbf{P}_i N_{i,d}(t)
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{P}_i\)</span> are the control points, <span class="arithmatex">\(N_{i,d}(t)\)</span> are the basis functions, and <span class="arithmatex">\(n\)</span> is the number of control points minus one.</p>
+<h3 id="diagram-of-b-spline-curve">Diagram of B-spline Curve</h3>
+<p>Consider a cubic B-spline curve with several control points:</p>
+<p><img alt="B-spline Curve" src="https://i.imgur.com/2YJ1xP2.png" /></p>
+<h3 id="3-practical-applications-in-game-development">3. Practical Applications in Game Development</h3>
+<h4 id="animations">Animations</h4>
+<p>Curves are used to interpolate the positions and orientations of objects over time, creating smooth animations. For example, a character's movement along a path can be defined using a Bézier or B-spline curve.</p>
+<h4 id="camera-paths">Camera Paths</h4>
+<p>Curves define the trajectory of the camera, ensuring smooth transitions and movements in the game world. A B-spline curve is particularly useful due to its local control properties.</p>
+<h4 id="object-trajectories">Object Trajectories</h4>
+<p>Curves define the path of moving objects, such as projectiles or vehicles, providing smooth and predictable motion.</p>
+<h3 id="conclusion_4">Conclusion</h3>
+<p>Understanding the mathematics of curves is crucial for various aspects of game development, including animation, camera movement, and object trajectories. By mastering Bézier and B-spline curves, developers can create smooth and dynamic motions, enhancing the overall gaming experience.</p>
+<h2 id="10-normal-mapping">10. Normal Mapping</h2>
+<p>Normal mapping is a technique used in game development to add detailed surface texture and lighting to 3D models without increasing their geometric complexity. This technique uses normal maps to simulate small surface details like bumps and dents. Here’s a detailed explanation of normal mapping, including the necessary mathematics, operations, and applications in game development.</p>
+<h3 id="1-what-is-a-normal-map">1. What is a Normal Map?</h3>
+<p>A normal map is a texture that stores normal vectors for each pixel, altering the way light interacts with the surface. Unlike a bump map, which only stores height information, a normal map stores directional information using RGB channels.</p>
+<h3 id="2-the-concept-of-normal-mapping">2. The Concept of Normal Mapping</h3>
+<p>The normal map modifies the surface normals of a 3D model, affecting the lighting calculations. This creates the illusion of complex surface details on a simple model.</p>
+<h3 id="diagram-of-normal-mapping">Diagram of Normal Mapping</h3>
+<p>Consider a flat surface with a normal map applied:</p>
+<p><img alt="Normal Mapping" src="https://i.imgur.com/otMxYWx.png" /></p>
+<h3 id="3-tangent-space">3. Tangent Space</h3>
+<p>Normal maps are often defined in tangent space, which is a coordinate system local to each point on the surface of a 3D model. Tangent space is defined by three vectors:</p>
+<ul>
+<li><strong>Tangent (<span class="arithmatex">\(\mathbf{T}\)</span>)</strong>: Points in the direction of the texture’s U coordinate.</li>
+<li><strong>Bitangent (<span class="arithmatex">\(\mathbf{B}\)</span>)</strong>: Points in the direction of the texture’s V coordinate.</li>
+<li><strong>Normal (<span class="arithmatex">\(\mathbf{N}\)</span>)</strong>: Points outward from the surface.</li>
+</ul>
+<h3 id="4-creating-the-tangent-space-basis">4. Creating the Tangent Space Basis</h3>
+<p>To transform normal vectors from tangent space to world space, we need to construct a tangent space basis matrix:</p>
+<div class="arithmatex">\[
+\mathbf{TBN} = \begin{pmatrix}
+\mathbf{T} &amp; \mathbf{B} &amp; \mathbf{N}
+\end{pmatrix}
+\]</div>
+<h4 id="calculating-tangent-and-bitangent">Calculating Tangent and Bitangent</h4>
+<p>Given texture coordinates <span class="arithmatex">\((u, v)\)</span> and vertex positions <span class="arithmatex">\((x, y, z)\)</span>, the tangent (<span class="arithmatex">\(\mathbf{T}\)</span>) and bitangent (<span class="arithmatex">\(\mathbf{B}\)</span>) vectors are computed using partial derivatives:</p>
+<ol>
+<li>
+<p>Compute the vectors <span class="arithmatex">\(\mathbf{\Delta P_1}\)</span> and <span class="arithmatex">\(\mathbf{\Delta P_2}\)</span> between vertices:</p>
+<div class="arithmatex">\[
+\mathbf{\Delta P_1} = \mathbf{P_2} - \mathbf{P_1}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{\Delta P_2} = \mathbf{P_3} - \mathbf{P_1}
+\]</div>
+</li>
+<li>
+<p>Compute the difference in texture coordinates:</p>
+<div class="arithmatex">\[
+\Delta u_1 = u_2 - u_1, \quad \Delta v_1 = v_2 - v_1
+\]</div>
+<div class="arithmatex">\[
+\Delta u_2 = u_3 - u_1, \quad \Delta v_2 = v_3 - v_1
+\]</div>
+</li>
+<li>
+<p>Use these differences to solve for the tangent and bitangent:</p>
+<div class="arithmatex">\[
+\mathbf{T} = \frac{1}{\Delta u_1 \Delta v_2 - \Delta u_2 \Delta v_1} (\Delta v_2 \mathbf{\Delta P_1} - \Delta v_1 \mathbf{\Delta P_2})
+\]</div>
+<div class="arithmatex">\[
+\mathbf{B} = \frac{1}{\Delta u_1 \Delta v_2 - \Delta u_2 \Delta v_1} (\Delta u_1 \mathbf{\Delta P_2} - \Delta u_2 \mathbf{\Delta P_1})
+\]</div>
+</li>
+</ol>
+<h3 id="5-normal-map-to-world-space">5. Normal Map to World Space</h3>
+<p>To transform the normal vector <span class="arithmatex">\(\mathbf{N_t}\)</span> from the normal map (in tangent space) to world space, we use the tangent space basis matrix:</p>
+<div class="arithmatex">\[
+\mathbf{N_w} = \mathbf{TBN} \cdot \mathbf{N_t}
+\]</div>
+<h3 id="diagram-of-tangent-space">Diagram of Tangent Space</h3>
+<p>Consider the transformation of a normal vector from tangent space to world space:</p>
+<p><img alt="Tangent Space" src="https://i.imgur.com/q7AKPbP.png" /></p>
+<h3 id="6-lighting-calculations">6. Lighting Calculations</h3>
+<p>With the normal in world space, standard lighting calculations (e.g., Lambertian reflection) are performed:</p>
+<div class="arithmatex">\[
+I = k_d (\mathbf{N_w} \cdot \mathbf{L}) \mathbf{C_l}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(I\)</span> is the intensity of the light.</li>
+<li><span class="arithmatex">\(k_d\)</span> is the diffuse coefficient.</li>
+<li><span class="arithmatex">\(\mathbf{L}\)</span> is the light direction.</li>
+<li><span class="arithmatex">\(\mathbf{C_l}\)</span> is the light color.</li>
+</ul>
+<h3 id="7-parallax-mapping">7. Parallax Mapping</h3>
+<p>Parallax mapping is an extension of normal mapping that adds depth to textures by offsetting texture coordinates based on the view direction.</p>
+<h4 id="height-map">Height Map</h4>
+<p>A height map is used to store the height information of the surface. The height value is used to compute the parallax offset.</p>
+<h4 id="parallax-offset-calculation">Parallax Offset Calculation</h4>
+<p>The parallax offset is computed using the view direction (<span class="arithmatex">\(\mathbf{V}\)</span>) and the height value (<span class="arithmatex">\(h\)</span>):</p>
+<div class="arithmatex">\[
+\mathbf{P} = \mathbf{TBN} \cdot \mathbf{V}
+\]</div>
+<div class="arithmatex">\[
+\text{offset} = h \cdot (\mathbf{P_x}, \mathbf{P_y})
+\]</div>
+<p>The texture coordinates are then adjusted by this offset to create the illusion of depth.</p>
+<h3 id="diagram-of-parallax-mapping">Diagram of Parallax Mapping</h3>
+<p>Consider the effect of parallax mapping on a surface:</p>
+<p><img alt="Parallax Mapping" src="https://i.imgur.com/1jIF94m.png" /></p>
+<h3 id="8-implementing-normal-mapping-in-shaders">8. Implementing Normal Mapping in Shaders</h3>
+<p>Normal mapping is typically implemented in shaders. The process involves:
+1. Sampling the normal map texture.
+2. Transforming the sampled normal from tangent space to world space.
+3. Performing lighting calculations using the transformed normal.</p>
+<h4 id="vertex-shader">Vertex Shader</h4>
+<p>The vertex shader computes the tangent space basis vectors and passes them to the fragment shader.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#version 330 core</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">layout</span><span class="p">(</span><span class="n">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">0</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">layout</span><span class="p">(</span><span class="n">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">normal</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">layout</span><span class="p">(</span><span class="n">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">vec2</span><span class="w"> </span><span class="n">texCoords</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">layout</span><span class="p">(</span><span class="n">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">tangent</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">out</span><span class="w"> </span><span class="kt">vec2</span><span class="w"> </span><span class="n">TexCoords</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">out</span><span class="w"> </span><span class="kt">mat3</span><span class="w"> </span><span class="n">TBN</span><span class="p">;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">mat4</span><span class="w"> </span><span class="n">model</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">mat4</span><span class="w"> </span><span class="n">view</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">mat4</span><span class="w"> </span><span class="n">projection</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">{</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nb">gl_Position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kt">vec4</span><span class="p">(</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="kt">vec3</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normalize</span><span class="p">(</span><span class="kt">mat3</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tangent</span><span class="p">);</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="kt">vec3</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normalize</span><span class="p">(</span><span class="kt">mat3</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">normal</span><span class="p">);</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">vec3</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cross</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">);</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="n">TBN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">mat3</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">);</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="n">TexCoords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texCoords</span><span class="p">;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="fragment-shader">Fragment Shader</h4>
+<p>The fragment shader performs the normal mapping and lighting calculations.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#version 330 core</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">in</span><span class="w"> </span><span class="kt">vec2</span><span class="w"> </span><span class="n">TexCoords</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">in</span><span class="w"> </span><span class="kt">mat3</span><span class="w"> </span><span class="n">TBN</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">out</span><span class="w"> </span><span class="kt">vec4</span><span class="w"> </span><span class="n">FragColor</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">sampler2D</span><span class="w"> </span><span class="n">normalMap</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">lightDir</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">viewDir</span><span class="p">;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">lightColor</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">objectColor</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">{</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="kt">vec3</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texture</span><span class="p">(</span><span class="n">normalMap</span><span class="p">,</span><span class="w"> </span><span class="n">TexCoords</span><span class="p">).</span><span class="n">rgb</span><span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="n">normal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normalize</span><span class="p">(</span><span class="n">normal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="n">normal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normalize</span><span class="p">(</span><span class="n">TBN</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">normal</span><span class="p">);</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="kt">vec3</span><span class="w"> </span><span class="n">lightDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normalize</span><span class="p">(</span><span class="n">lightDir</span><span class="p">);</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">normal</span><span class="p">,</span><span class="w"> </span><span class="n">lightDir</span><span class="p">),</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="kt">vec3</span><span class="w"> </span><span class="n">diffuse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">lightColor</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">objectColor</span><span class="p">;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="n">FragColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">vec4</span><span class="p">(</span><span class="n">diffuse</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="applications-in-game-development_1">Applications in Game Development</h3>
+<ol>
+<li><strong>Detail Enhancement</strong>: Normal mapping adds fine details to models without increasing polygon count, enhancing visual fidelity.</li>
+<li><strong>Performance Optimization</strong>: By simulating surface details with textures, normal mapping reduces the need for complex geometry, improving rendering performance.</li>
+<li><strong>Realistic Lighting</strong>: Normal maps enhance the interaction between light and surface, creating more realistic and dynamic lighting effects.</li>
+</ol>
+<h3 id="conclusion_5">Conclusion</h3>
+<p>Normal mapping is a crucial technique in game development for creating detailed and realistic surfaces. By understanding the mathematics behind normal maps, tangent space transformations, and lighting calculations, developers can implement efficient and visually compelling normal mapping in their games.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
