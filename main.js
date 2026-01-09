@@ -65,7 +65,7 @@ const resumeData = {
             category: "Personal Projects",
             company: "Open Source",
             date: "2024",
-            image: "./assets/code_systems.png",
+            image: "./assets/jobkit_thumb.png",
             tools: ["C++", "Multithreading", "Fibers"],
             links: [
                 { label: "GitHub", url: "https://github.com/joseph-gamedev/jobkit" }
@@ -76,7 +76,7 @@ const resumeData = {
                 "Designed a lock-free work-stealing queue for load balancing across cores.",
                 "Created a simple API for dependency management and graph execution."
             ],
-            gallery: []
+            gallery: ["./assets/jobkit_thumb.png"]
         },
         "shadows": {
             id: "shadows",
