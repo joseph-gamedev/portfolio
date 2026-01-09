@@ -45,7 +45,7 @@ const resumeData = {
             category: "Personal Projects",
             company: "Open Source",
             date: "2024",
-            image: "/portfolio/assets/code_systems.png",
+            image: "./assets/code_systems.png",
             tools: ["C++", "VFS", "Systems"],
             links: [
                 { label: "GitHub", url: "https://github.com/joseph-gamedev/tiny_vfs" }
@@ -65,7 +65,7 @@ const resumeData = {
             category: "Personal Projects",
             company: "Open Source",
             date: "2024",
-            image: "/portfolio/assets/code_systems.png",
+            image: "./assets/code_systems.png",
             tools: ["C++", "Multithreading", "Fibers"],
             links: [
                 { label: "GitHub", url: "https://github.com/joseph-gamedev/jobkit" }
@@ -85,7 +85,7 @@ const resumeData = {
             category: "Gameplay Programming",
             company: "NextPlayerGames",
             date: "2024 - Present",
-            image: "/portfolio/assets/shadows_thumb.jpg",
+            image: "./assets/shadows_thumb.jpg",
             tools: ["Unreal Engine 5", "C++", "Steamworks", "Replication Graph"],
             links: [
                 { label: "Steam Page", url: "#" },
@@ -99,11 +99,11 @@ const resumeData = {
                 "Optimized network bandwidth usage by implementing custom replication conditions for high-frequency actors."
             ],
             gallery: [
-                "/portfolio/assets/shadows_HUD.png",
-                "/portfolio/assets/shadows_gameplay_1.gif",
-                "/portfolio/assets/shadows_gameplay_2.gif",
-                "/portfolio/assets/shadows_gameplay_3.gif",
-                "/portfolio/assets/shadows_gameplay_4.gif"
+                "./assets/shadows_HUD.png",
+                "./assets/shadows_gameplay_1.gif",
+                "./assets/shadows_gameplay_2.gif",
+                "./assets/shadows_gameplay_3.gif",
+                "./assets/shadows_gameplay_4.gif"
             ]
         },
         "lab-designer": {
@@ -113,7 +113,7 @@ const resumeData = {
             category: "Tools Development",
             company: "BuMo3DR",
             date: "Dec 2016 - June 2024",
-            image: "/portfolio/assets/lab_designer.png",
+            image: "./assets/lab_designer.png",
             tools: ["Unreal Engine 5", "C++", "Python", "AWS SDK", "USD"],
             links: [
                 { label: "Product Page", url: "#" }
@@ -144,7 +144,7 @@ const resumeData = {
             category: "Professional Work",
             company: "BuMo3DR",
             date: "Jan 2020 - Oct 2020",
-            image: "/portfolio/assets/vr_ar_tech.png",
+            image: "./assets/vr_ar_tech.png",
             tools: ["Unreal Engine 4", "Vuforia", "Photon Networking"],
             links: [],
             overview: "Interactive VR/AR experience demonstrating adhesive technologies with performance-optimized assets.",
@@ -162,7 +162,7 @@ const resumeData = {
             category: "Professional Work",
             company: "BuMo3DR",
             date: "Nov 2019 - Jan 2020",
-            image: "/portfolio/assets/vr_ar_tech.png",
+            image: "./assets/vr_ar_tech.png",
             tools: ["Unity", "Vuforia"],
             links: [],
             overview: "Designed and developed the entire application based on specific client requirements.",
@@ -178,7 +178,7 @@ const resumeData = {
             category: "Professional Work",
             company: "BuMo3DR",
             date: "Oct 2019",
-            image: "/portfolio/assets/vr_ar_tech.png",
+            image: "./assets/vr_ar_tech.png",
             tools: ["Unreal Engine 4", "Photon Networking"],
             links: [],
             overview: "A VR experience allowing users to configure and view cars in a virtual showroom.",
@@ -197,7 +197,7 @@ const resumeData = {
             category: "Professional Work",
             company: "BuMo3DR",
             date: "Apr 2019 - May 2020",
-            image: "/portfolio/assets/vr_ar_tech.png",
+            image: "./assets/vr_ar_tech.png",
             tools: ["Unreal Engine 4", "Photon Networking"],
             links: [],
             overview: "Training simulation for packaging technology procedures.",
@@ -216,7 +216,7 @@ const resumeData = {
             category: "Professional Work",
             company: "BuMo3DR",
             date: "Apr 2018 - May 2020",
-            image: "/portfolio/assets/vr_ar_tech.png",
+            image: "./assets/vr_ar_tech.png",
             tools: ["Unreal Engine 4", "Photon Networking"],
             links: [],
             overview: "A VR application for enterprise training and visualization.",
@@ -235,7 +235,7 @@ const resumeData = {
             category: "Professional Work",
             company: "BuMo3DR",
             date: "Jul 2018 - Nov 2018",
-            image: "/portfolio/assets/vr_ar_tech.png",
+            image: "./assets/vr_ar_tech.png",
             tools: ["Unity", "Photon Networking", "MRTK", "Vuforia SDK"],
             links: [],
             overview: "Mixed Reality application for Industry 4.0 concept training.",
@@ -253,7 +253,7 @@ const resumeData = {
             category: "Professional Work",
             company: "BuMo3DR",
             date: "",
-            image: "/portfolio/assets/vr_ar_tech.png",
+            image: "./assets/vr_ar_tech.png",
             tools: ["Unreal Engine 4", "Photon Networking"],
             links: [],
             overview: "A medical VR simulation visualizing the nasal cavity.",
@@ -272,7 +272,7 @@ const resumeData = {
             category: "Tools Development",
             company: "BuMo3DR",
             date: "",
-            image: "/portfolio/assets/vr_ar_tech.png",
+            image: "./assets/vr_ar_tech.png",
             tools: ["Unreal Engine 4", "Python", "Nvidia Ansel"],
             links: [],
             overview: "Custom plugin for rendering 360 videos in Unreal Engine.",
@@ -290,7 +290,7 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "/portfolio/assets/boggle_1.jpg",
+            image: "./assets/boggle_1.jpg",
             tools: ["Objective-C", "C++"],
             links: [],
             overview: "iPhone version of the classic Boggle game.",
@@ -300,9 +300,9 @@ const resumeData = {
                 "Integrated in-house SDKs for enhanced functionality."
             ],
             gallery: [
-                "/portfolio/assets/boggle_1.jpg",
-                "/portfolio/assets/boggle_2.jpg",
-                "/portfolio/assets/boggle_3.png"
+                "./assets/boggle_1.jpg",
+                "./assets/boggle_2.jpg",
+                "./assets/boggle_3.png"
             ]
         },
         "nfs-shift": {
@@ -312,7 +312,7 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "/portfolio/assets/nfs_shift.jpg",
+            image: "./assets/nfs_shift.jpg",
             tools: ["Objective-C", "C++"],
             links: [],
             overview: "Mobile adaptation of NFS Shift.",
@@ -330,7 +330,7 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "/portfolio/assets/nfs_hp.jpg",
+            image: "./assets/nfs_hp.jpg",
             tools: ["Objective-C", "C++"],
             links: [],
             overview: "Mobile adaptation of NFS Hot Pursuit.",
@@ -349,7 +349,7 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "/portfolio/assets/madden_main.jpg",
+            image: "./assets/madden_main.jpg",
             tools: ["Objective-C", "C++", "iOS SDK"],
             links: [],
             overview: "iPad version of Madden NFL.",
