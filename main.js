@@ -34,10 +34,30 @@ const resumeData = {
             id: "personal",
             title: "Personal Projects",
             description: "Open source libraries and experiments.",
-            projectIds: ["tiny_vfs", "jobkit"]
+            projectIds: ["tiny_vfs", "jobkit", "atlas2d"]
         }
     ],
     projects: {
+        "atlas2d": {
+            id: "atlas2d",
+            title: "Atlas2D",
+            tagline: "Windows-focused 2D Game Engine",
+            category: "Personal Projects",
+            company: "Open Source",
+            date: "2024",
+            image: "./placeholder_thumb.png",
+            tools: ["C++", "DirectX 11", "CMake"],
+            links: [
+                { label: "GitHub", url: "https://github.com/joseph-gamedev/atlas2d" }
+            ],
+            overview: "A Windows-focused 2D game engine featuring a D3D11 renderer and a custom build system.",
+            contributions: [
+                "Implemented a Direct3D 11 renderer with a GLib compatibility layer.",
+                "Designed a custom CMake-based build system for easy dependency management.",
+                "Created a sample game (MonsterChaseGame) to demonstrate engine capabilities."
+            ],
+            gallery: []
+        },
         "tiny_vfs": {
             id: "tiny_vfs",
             title: "tiny_vfs",
