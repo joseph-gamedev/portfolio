@@ -174,6 +174,23 @@ a:not(.btn):not(.project-card):hover::after {
   animation: gradient-x 6s ease infinite;
 }
 
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  border: 4px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    var(--text-gradient) border-box;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
 .tech-stack-hero {
   font-family: var(--font-mono);
   color: var(--text-accent);
@@ -483,6 +500,11 @@ a:not(.btn):not(.project-card):hover::after {
 @media(max-width: 768px) {
   .hero-content h1 {
     font-size: 3rem;
+  }
+
+  .profile-photo {
+    width: 140px;
+    height: 140px;
   }
 
   .detail-title {
