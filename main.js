@@ -45,7 +45,7 @@ const resumeData = {
             category: "Personal Projects",
             company: "Open Source",
             date: "2024",
-            image: "./assets/code_systems.png",
+            image: "./assets/tiny_vfs_thumb.png",
             tools: ["C++", "VFS", "Systems"],
             links: [
                 { label: "GitHub", url: "https://github.com/joseph-gamedev/tiny_vfs" }
@@ -56,7 +56,7 @@ const resumeData = {
                 "Designed a platform-agnostic file interface for cross-platform compatibility.",
                 "Optimized for minimal memory footprint and high read performance."
             ],
-            gallery: []
+            gallery: ["./assets/tiny_vfs_thumb.png"]
         },
         "jobkit": {
             id: "jobkit",
