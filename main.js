@@ -19,16 +19,16 @@ const resumeData = {
             projectIds: ["shadows", "lab-designer"]
         },
         {
-            id: "gameplay",
-            title: "Gameplay Programming",
-            description: "Core mechanics, AI, and systems design.",
-            projectIds: ["shadows", "platformer", "rhythm"]
+            id: "professional",
+            title: "Professional Work",
+            description: "Commercial projects delivered for BuMo3DR and Electronic Arts.",
+            projectIds: ["adhesive", "proton", "car-config", "packaging", "avant", "industry4", "nasal", "boggle", "nfs-shift", "nfs-hp", "madden", "java-ports"]
         },
         {
             id: "tools",
             title: "Tools Development",
-            description: "Pipelines, editors, and workflow optimization.",
-            projectIds: ["lab-designer", "importer"]
+            description: "Plugins and pipeline optimization tools.",
+            projectIds: ["video-plugin"]
         }
     ],
     projects: {
@@ -60,7 +60,7 @@ const resumeData = {
             tagline: "Real-time Architectural Visualization Tool",
             category: "Tools Development",
             company: "BuMo3DR",
-            date: "2016 - 2024",
+            date: "Dec 2016 - June 2024",
             image: "assets/lab_designer.png",
             tools: ["Unreal Engine 5", "C++", "Python", "AWS SDK", "USD"],
             links: [
@@ -68,62 +68,255 @@ const resumeData = {
             ],
             overview: "Comprehensive architectural visualization tool for real-time lab design across PC and XR platforms. It allows non-technical users to design complex lab layouts in minutes.",
             contributions: [
-                "Ported project from Unreal Engine 4 to Unreal Engine 5, leveraging Nanite and Lumen for photorealism.",
-                "Implemented interactions for room creation, wall structures, and dynamic presentation tools based on constructive solid geometry (CSG).",
+                "Ported project from Unreal Engine 4 to Unreal Engine 5.",
+                "Implemented core features: room creation, wall structures, and dynamic presentation tools.",
                 "Engineered systems for object connections, traffic management, and lab automation simulation.",
-                "Designed custom file formats with C++ parsers for project saving and loading, integrated with AWS S3.",
-                "Developed Unreal Editor utilities (Blutility) to automate asset import pipelines."
+                "Developed advanced drawing tools for complex structures and wall designs.",
+                "Created data structures and algorithms for wall, ceiling, and floor manipulation.",
+                "Integrated libraries for computational solid geometry and file format imports (Visio, DWG).",
+                "Designed custom file formats with parsers for project saving and loading.",
+                "Implemented AWS SDK integration for cloud-based file storage and authentication.",
+                "Developed Unreal Editor utilities and pipeline tools to enhance workflow efficiency.",
+                "Created plugins to improve code reusability across the project.",
+                "Implemented undo/redo functionality using design patterns (Command, Memento).",
+                "Integrated Photon SDK for cross-platform multiplayer functionality.",
+                "Developed modules for simulation, auto-detection of rooms, and floor generation.",
+                "Designed and implemented user interface components."
             ],
             gallery: []
         },
-        "platformer": {
-            id: "platformer",
-            title: "Time-Warp Platformer",
-            tagline: "2D Puzzle Platformer Mechanic",
-            category: "Gameplay Programming",
-            company: "Personal Project",
-            date: "2023",
+        "adhesive": {
+            id: "adhesive",
+            title: "Adhesive Technology Exploration",
+            tagline: "XR Experience",
+            category: "Professional Work",
+            company: "BuMo3DR",
+            date: "Jan 2020 - Oct 2020",
             image: "",
-            tools: ["Unity", "C#", "Shader Graph"],
+            tools: ["Unreal Engine 4", "Vuforia", "Photon Networking"],
             links: [],
-            overview: "A prototype focusing on a 'rewind' mechanic allowing players to reverse time for specific objects.",
+            overview: "Interactive VR/AR experience demonstrating adhesive technologies with performance-optimized assets.",
             contributions: [
-                "Implemented a circular buffer system to record object states (position, velocity, animation) for time reversal.",
-                "Created custom shaders to visualize the 'time warp' effect using stencil buffers."
+                "Developed VR and AR versions of the application and implemented code for multiple systems.",
+                "Optimized performance on mobile hardware, prioritizing Memory Management for reducing Poly Count and Texture Map memory usage.",
+                "Implemented Cross-Platform Multiplayer functionality, 360 Video integration, Hand Motion Controller support, In-game Screenshots, and utilized design patterns (Command, Factory, Message) for structured software architecture."
             ],
             gallery: []
         },
-        "rhythm": {
-            id: "rhythm",
-            title: "Beat Slayer",
-            tagline: "Rhythm-based Combat Prototype",
-            category: "Gameplay Programming",
-            company: "Game Jam",
-            date: "2022",
+        "proton": {
+            id: "proton",
+            title: "Proton Center Location Estimator",
+            tagline: "AR Utility",
+            category: "Professional Work",
+            company: "BuMo3DR",
+            date: "Nov 2019 - Jan 2020",
             image: "",
-            tools: ["Unreal Engine 4", "Blueprints", "FMOD"],
+            tools: ["Unity", "Vuforia"],
             links: [],
-            overview: "A combat game where attacks must sync with the music beat.",
+            overview: "Designed and developed the entire application based on specific client requirements.",
             contributions: [
-                "Integrated FMOD for precise beat detection and extracting BPM data at runtime.",
-                "Designed the input system to allow for 'perfect', 'good', and 'miss' timing windows."
+                "Designed and developed the entire application based on specific client requirements."
             ],
             gallery: []
         },
-        "importer": {
-            id: "importer",
-            title: "Universal Mesh Importer",
-            tagline: "Runtime Asset Import Plugin",
+        "car-config": {
+            id: "car-config",
+            title: "VR Car Configurator",
+            tagline: "Virtual Reality Product Configurator",
+            category: "Professional Work",
+            company: "BuMo3DR",
+            date: "Oct 2019",
+            image: "",
+            tools: ["Unreal Engine 4", "Photon Networking"],
+            links: [],
+            overview: "A VR experience allowing users to configure and view cars in a virtual showroom.",
+            contributions: [
+                "Engineered library and plugin code in C++ and implemented game-play logic using Blueprints.",
+                "Led the product development from inception to completion.",
+                "Designed and integrated cross-platform and multi-player functionality.",
+                "Applied design patterns including Factory and Singleton to enhance code architecture."
+            ],
+            gallery: []
+        },
+        "packaging": {
+            id: "packaging",
+            title: "Packaging Technology Training",
+            tagline: "VR/MR Training Application",
+            category: "Professional Work",
+            company: "BuMo3DR",
+            date: "Apr 2019 - May 2020",
+            image: "",
+            tools: ["Unreal Engine 4", "Photon Networking"],
+            links: [],
+            overview: "Training simulation for packaging technology procedures.",
+            contributions: [
+                "Created 3D UI interactions, animated interactions, and controllers.",
+                "Implemented grab interactions tailored for the Oculus platform.",
+                "Integrated cross-platform multiplayer functionality and an in-game replay system.",
+                "Implemented design patterns (Command, Factory, Message) to enhance software architecture efficiency."
+            ],
+            gallery: []
+        },
+        "avant": {
+            id: "avant",
+            title: "Avant (VR)",
+            tagline: "Enterprise VR Application",
+            category: "Professional Work",
+            company: "BuMo3DR",
+            date: "Apr 2018 - May 2020",
+            image: "",
+            tools: ["Unreal Engine 4", "Photon Networking"],
+            links: [],
+            overview: "A VR application for enterprise training and visualization.",
+            contributions: [
+                "Implemented an in-game replay system enabling users to view and save replays of their interactions in XML format, with support for cross-platform multiplayer functionality.",
+                "Refactored and ported library code into project plugins to enhance reusability.",
+                "Enhanced codebase by rewriting and optimizing various components.",
+                "Employed design patterns such as Message, Command, and State Machine to improve software architecture."
+            ],
+            gallery: []
+        },
+        "industry4": {
+            id: "industry4",
+            title: "Industry 4.0 Training (MR)",
+            tagline: "Mixed Reality Training",
+            category: "Professional Work",
+            company: "BuMo3DR",
+            date: "Jul 2018 - Nov 2018",
+            image: "",
+            tools: ["Unity", "Photon Networking", "MRTK", "Vuforia SDK"],
+            links: [],
+            overview: "Mixed Reality application for Industry 4.0 concept training.",
+            contributions: [
+                "Implemented features such as cross-platform multiplayer, spectator view, and live event synchronization.",
+                "Applied various design patterns, including Message, State Machines, Singleton, and Event Listeners.",
+                "Integrated gesture recognition and image target detection APIs."
+            ],
+            gallery: []
+        },
+        "nasal": {
+            id: "nasal",
+            title: "Journey through Nasal Cavity",
+            tagline: "Medical Simulation",
+            category: "Professional Work",
+            company: "BuMo3DR",
+            date: "",
+            image: "",
+            tools: ["Unreal Engine 4", "Photon Networking"],
+            links: [],
+            overview: "A medical VR simulation visualizing the nasal cavity.",
+            contributions: [
+                "Designed and implemented the entire application workflow.",
+                "Developed AI algorithms to efficiently simulate the flow of large particles.",
+                "Created a custom particle system module with path modifiers and various emitter shapes.",
+                "Developed an iPad application for spectator view and scene control."
+            ],
+            gallery: []
+        },
+        "video-plugin": {
+            id: "video-plugin",
+            title: "360 Video VR Plugin",
+            tagline: "UE4 Media Plugin",
             category: "Tools Development",
-            company: "Personal Tool",
-            date: "2021",
+            company: "BuMo3DR",
+            date: "",
             image: "",
-            tools: ["C++", "Assimp", "Unreal Engine"],
-            links: [{ label: "GitHub", url: "#" }],
-            overview: "A plugin to import OBJ/FBX models at runtime without freezing the game thread.",
+            tools: ["Unreal Engine 4", "Python", "Nvidia Ansel"],
+            links: [],
+            overview: "Custom plugin for rendering 360 videos in Unreal Engine.",
             contributions: [
-                "Wrapped around the Assimp library to parse model data asynchronously.",
-                "Generated procedural meshes in Unreal Engine from the parsed data."
+                "Created a custom plugin in Unreal Engine 4 to render 360 videos.",
+                "Developed scripts in Python to utilize ffmpeg for combining individual frames into videos of desired resolutions.",
+                "Automated 360 frame capture using Nvidia Ansel for efficient video creation processes."
+            ],
+            gallery: []
+        },
+        "boggle": {
+            id: "boggle",
+            title: "Boggle (iPhone)",
+            tagline: "Mobile Game Port",
+            category: "Professional Work",
+            company: "Electronic Arts",
+            date: "",
+            image: "",
+            tools: ["Objective-C", "C++"],
+            links: [],
+            overview: "iPhone version of the classic Boggle game.",
+            contributions: [
+                "Fixed multiple crashes and bugs.",
+                "Expanded iPhone device support.",
+                "Integrated in-house SDKs for enhanced functionality."
+            ],
+            gallery: []
+        },
+        "nfs-shift": {
+            id: "nfs-shift",
+            title: "Need for Speed: Shift",
+            tagline: "Mobile Racing",
+            category: "Professional Work",
+            company: "Electronic Arts",
+            date: "",
+            image: "",
+            tools: ["Objective-C", "C++"],
+            links: [],
+            overview: "Mobile adaptation of NFS Shift.",
+            contributions: [
+                "Improved user interface as per the design.",
+                "Fixed several crashes and bugs.",
+                "Integrated AD sdk and COPPA sdk."
+            ],
+            gallery: []
+        },
+        "nfs-hp": {
+            id: "nfs-hp",
+            title: "Need for Speed: Hot Pursuit",
+            tagline: "Mobile Racing",
+            category: "Professional Work",
+            company: "Electronic Arts",
+            date: "",
+            image: "",
+            tools: ["Objective-C", "C++"],
+            links: [],
+            overview: "Mobile adaptation of NFS Hot Pursuit.",
+            contributions: [
+                "Tested Everyplay SDK for video recording with developer assistance.",
+                "Integrated AD SDK and proprietary SDKs to enhance user experience.",
+                "Added support for the latest iOS devices.",
+                "Implemented user interface changes."
+            ],
+            gallery: []
+        },
+        "madden": {
+            id: "madden",
+            title: "Madden NFL (iPad)",
+            tagline: "Sports Simulation",
+            category: "Professional Work",
+            company: "Electronic Arts",
+            date: "",
+            image: "",
+            tools: ["Objective-C", "C++", "iOS SDK"],
+            links: [],
+            overview: "iPad version of Madden NFL.",
+            contributions: [
+                "Optimized application performance, fixed bugs, and updated to the latest iOS version.",
+                "Expanded iOS device compatibility.",
+                "Integrated AD SDK and proprietary SDKs to enhance user experience."
+            ],
+            gallery: []
+        },
+        "java-ports": {
+            id: "java-ports",
+            title: "Java Feature Phone Ports",
+            tagline: "Legacy Mobile Ports",
+            category: "Professional Work",
+            company: "Electronic Arts",
+            date: "",
+            image: "",
+            tools: ["Java ME"],
+            links: [],
+            overview: "Porting various EA titles to feature phones.",
+            contributions: [
+                "Ported EA titles including Sims, NFS Hot Pursuit, FIFA, Bejeweled, and The Simpsons to various Java feature phones."
             ],
             gallery: []
         }
