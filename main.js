@@ -330,7 +330,7 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "./assets/nfs_hp.jpg",
+            image: "./assets/nfs_hp_feat.jpg",
             tools: ["Objective-C", "C++"],
             links: [],
             overview: "Mobile adaptation of NFS Hot Pursuit.",
@@ -340,7 +340,14 @@ const resumeData = {
                 "Added support for the latest iOS devices.",
                 "Implemented user interface changes."
             ],
-            gallery: []
+            gallery: [
+                "./assets/nfs_hp_icon.png",
+                "./assets/nfs_hp_shot_1.png",
+                "./assets/nfs_hp_shot_2.png",
+                "./assets/nfs_hp_shot_3.avif",
+                "./assets/nfs_hp_shot_4.avif",
+                "./assets/nfs_hp_shot_5.avif"
+            ]
         },
         "madden": {
             id: "madden",
