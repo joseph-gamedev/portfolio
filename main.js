@@ -380,14 +380,21 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "",
+            image: "./assets/java_ports_main.jpg",
             tools: ["Java ME"],
             links: [],
             overview: "Porting various EA titles to feature phones.",
             contributions: [
                 "Ported EA titles including Sims, NFS Hot Pursuit, FIFA, Bejeweled, and The Simpsons to various Java feature phones."
             ],
-            gallery: []
+            gallery: [
+                "./assets/java_port_shot_1.jpg",
+                "./assets/java_port_shot_2.jpg",
+                "./assets/java_port_shot_3.jpg",
+                "./assets/java_port_shot_4.jpg",
+                "./assets/java_port_shot_5.jpg",
+                "./assets/java_port_shot_6.jpg"
+            ]
         }
     }
 };
