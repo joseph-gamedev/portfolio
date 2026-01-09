@@ -1,388 +1,192 @@
-// Resume Data (Extracted from provided source)
+// Resume Data (Redesigned for Project-Centric Layout)
 const resumeData = {
     header: {
         name: "Joseph Fernandez",
         title: "Gameplay Programmer"
     },
     summary: "Developer with 10+ years of experience in game programming, real-time visualization, and XR applications.",
-    experience: [
+    socials: [
+        { label: "GitHub", url: "https://github.com/joseph-gamedev" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/joseph-fernandez" },
+        { label: "Email", url: "mailto:joseph@example.com" }
+    ],
+    // Categories: Featured, Gameplay, Tools, Prototypes
+    projectCategories: [
         {
-            title: "Gameplay Programmer",
-            company: "NextPlayerGames, USA",
-            date: "2024 - Present",
-            responsibilities: [
-                "Implemented replicated weapon mechanics in Unreal Engine, including ammo handling, hit detection, and recoil.",
-                "Developed replicated systems for session management, player interactions, and real-time data synchronization.",
-                "Developed multiplayer inventory and NPC replication with AI-driven behaviors in Unreal Engine."
-            ]
+            id: "featured",
+            title: "Featured",
+            description: "Highlights of my best technical work.",
+            projectIds: ["shadows", "lab-designer"]
         },
         {
-            title: "Lead Game Programmer",
-            company: "BuMo3DR, Chennai, India",
-            date: "Nov 2021 - Jun 2024",
-            responsibilities: [
-                "Led teams of 10+ programmers and designers on 5+ projects involving computer graphics and extended reality.",
-                "Developed a 3D Lab Designer using Unreal Engine and C++, enabling real-time visualization across PC, AR, VR, and MR.",
-                "Engineered core systems for room creation, wall structures, traffic simulation, and lab automation.",
-                "Integrated real-time ray tracing, Nanite, and advanced global illumination.",
-                "Engineered new tools and frameworks with C++, C#, and Python, enhancing efficiency by 30%.",
-                "Mentored more than 5 junior developers through weekly code reviews."
-            ]
+            id: "gameplay",
+            title: "Gameplay Programming",
+            description: "Core mechanics, AI, and systems design.",
+            projectIds: ["shadows", "platformer", "rhythm"]
         },
         {
-            title: "Senior Game Programmer",
-            company: "BuMo3DR, Chennai, India",
-            date: "May 2018 - Oct 2021",
-            responsibilities: [
-                "Delivered 10+ projects involving 3D computer graphics and XR.",
-                "Designed data visualization applications utilizing OGDF.",
-                "Integrated ARKit, Vuforia, and MRTK, reducing integration time by 20%.",
-                "Wrote cross-platform core libraries to improve code re-usability by 50%."
-            ]
-        },
-        {
-            title: "3D Programmer",
-            company: "BuMo3DR",
-            date: "Mar 2016 - Apr 2018",
-            responsibilities: [
-                "Created 3D applications focusing on graphics programming and optimization.",
-                "Implemented XR features for over 5 client projects."
-            ]
-        },
-        {
-            title: "Associate Software Engineer",
-            company: "Electronic Arts",
-            date: "Jun 2012 - Mar 2014",
-            responsibilities: [
-                "Worked on iOS Live services for over 10 mobile games.",
-                "Enhanced features for Battleship, Monopoly, Need for Speed, and Madden NFL, reducing bug reports by 20%.",
-                "Ported EA titles including Sims, NFS Hot Pursuit, and FIFA to over 100+ Java feature phones."
-            ]
+            id: "tools",
+            title: "Tools Development",
+            description: "Pipelines, editors, and workflow optimization.",
+            projectIds: ["lab-designer", "importer"]
         }
     ],
-    projects: [
-        {
+    projects: {
+        "shadows": {
+            id: "shadows",
             title: "Shadows of Dawn",
+            tagline: "High-fidelity Multiplayer FPS",
+            category: "Gameplay Programming",
             company: "NextPlayerGames",
             date: "2024 - Present",
-            description: "A high-fidelity multiplayer FPS featuring replicated weapon systems and inventory management.",
-            details: [
+            image: "assets/shadows_of_dawn.png",
+            tools: ["Unreal Engine 5", "C++", "Steamworks", "Replication Graph"],
+            links: [
+                { label: "Steam Page", url: "#" },
+                { label: "Tech Blog", url: "#" }
+            ],
+            overview: "A high-fidelity multiplayer FPS featuring replicated weapon systems and inventory management. I was responsible for the core networking architecture and weapon handling.",
+            contributions: [
                 "Engineered high-fidelity replicated weapon systems in Unreal Engine, comprising server-authoritative hit detection, recoil, and ammo management.",
-                "Architected robust multiplayer session management and real-time synchronization systems for seamless player interactions.",
-                "Developed scalable replicated inventory systems and network-optimized AI behaviors, ensuring consistency across clients."
+                "Architected robust multiplayer session management and real-time synchronization systems for seamless player interactions using the Common Session Subsystem.",
+                "Developed scalable replicated inventory systems and network-optimized AI behaviors, ensuring consistency across clients.",
+                "Optimized network bandwidth usage by implementing custom replication conditions for high-frequency actors."
             ],
-            tools: "Unreal Engine, C++, Multiplayer",
-            platforms: "PC",
-            image: "assets/shadows_of_dawn.png"
+            gallery: []
         },
-        {
+        "lab-designer": {
+            id: "lab-designer",
             title: "3D Lab Designer",
+            tagline: "Real-time Architectural Visualization Tool",
+            category: "Tools Development",
             company: "BuMo3DR",
-            date: "Dec 2016 - June 2024",
-            description: "Comprehensive architectural visualization tool for real-time lab design across PC and XR platforms.",
-            details: [
-                "Ported project from Unreal Engine 4 to Unreal Engine 5.",
-                "Implemented core features: room creation, wall structures, and dynamic presentation tools.",
+            date: "2016 - 2024",
+            image: "assets/lab_designer.png",
+            tools: ["Unreal Engine 5", "C++", "Python", "AWS SDK", "USD"],
+            links: [
+                { label: "Product Page", url: "#" }
+            ],
+            overview: "Comprehensive architectural visualization tool for real-time lab design across PC and XR platforms. It allows non-technical users to design complex lab layouts in minutes.",
+            contributions: [
+                "Ported project from Unreal Engine 4 to Unreal Engine 5, leveraging Nanite and Lumen for photorealism.",
+                "Implemented interactions for room creation, wall structures, and dynamic presentation tools based on constructive solid geometry (CSG).",
                 "Engineered systems for object connections, traffic management, and lab automation simulation.",
-                "Developed advanced drawing tools for complex structures and wall designs.",
-                "Created data structures and algorithms for wall, ceiling, and floor manipulation.",
-                "Integrated libraries for computational solid geometry and file format imports (Visio, DWG).",
-                "Designed custom file formats with parsers for project saving and loading.",
-                "Implemented AWS SDK integration for cloud-based file storage and authentication.",
-                "Developed Unreal Editor utilities and pipeline tools to enhance workflow efficiency.",
-                "Created plugins to improve code reusability across the project.",
-                "Implemented undo/redo functionality using design patterns (Command, Memento).",
-                "Integrated Photon SDK for cross-platform multiplayer functionality.",
-                "Developed modules for simulation, auto-detection of rooms, and floor generation.",
-                "Designed and implemented user interface components."
+                "Designed custom file formats with C++ parsers for project saving and loading, integrated with AWS S3.",
+                "Developed Unreal Editor utilities (Blutility) to automate asset import pipelines."
             ],
-            tools: "Unreal Engine 4, Unreal Engine 5, Unity, ARKit, Photon Networking, AWS SDK.",
-            platforms: "PC, Oculus Rift, Oculus Rift S, Oculus Quest, iPad, and Hololens"
+            gallery: []
         },
-        {
-            title: "Adhesive Technology Exploration",
-            company: "BuMo3DR",
-            date: "Jan 2020 - Oct 2020",
-            description: "Interactive VR/AR experience demonstrating adhesive technologies with performance-optimized assets.",
-            details: [
-                "Developed VR and AR versions of the application and implemented code for multiple systems.",
-                "Optimized performance on mobile hardware, prioritizing Memory Management for reducing Poly Count and Texture Map memory usage.",
-                "Implemented Cross-Platform Multiplayer functionality, 360 Video integration, Hand Motion Controller support, In-game Screenshots, and utilized design patterns (Command, Factory, Message) for structured software architecture."
+        "platformer": {
+            id: "platformer",
+            title: "Time-Warp Platformer",
+            tagline: "2D Puzzle Platformer Mechanic",
+            category: "Gameplay Programming",
+            company: "Personal Project",
+            date: "2023",
+            image: "",
+            tools: ["Unity", "C#", "Shader Graph"],
+            links: [],
+            overview: "A prototype focusing on a 'rewind' mechanic allowing players to reverse time for specific objects.",
+            contributions: [
+                "Implemented a circular buffer system to record object states (position, velocity, animation) for time reversal.",
+                "Created custom shaders to visualize the 'time warp' effect using stencil buffers."
             ],
-            tools: "Unreal Engine 4, Vuforia, Photon Networking",
-            platforms: "PC, Oculus Rift, iPad"
+            gallery: []
         },
-        {
-            title: "Proton Center Location Estimator",
-            company: "BuMo3DR",
-            date: "Nov 2019 - Jan 2020",
-            details: [
-                "Designed and developed the entire application based on specific client requirements."
+        "rhythm": {
+            id: "rhythm",
+            title: "Beat Slayer",
+            tagline: "Rhythm-based Combat Prototype",
+            category: "Gameplay Programming",
+            company: "Game Jam",
+            date: "2022",
+            image: "",
+            tools: ["Unreal Engine 4", "Blueprints", "FMOD"],
+            links: [],
+            overview: "A combat game where attacks must sync with the music beat.",
+            contributions: [
+                "Integrated FMOD for precise beat detection and extracting BPM data at runtime.",
+                "Designed the input system to allow for 'perfect', 'good', and 'miss' timing windows."
             ],
-            tools: "Unity, Vuforia",
-            platforms: "iPad (AR)"
+            gallery: []
         },
-        {
-            title: "VR Car Configurator",
-            company: "BuMo3DR",
-            date: "Oct 2019",
-            details: [
-                "Engineered library and plugin code in C++ and implemented game-play logic using Blueprints.",
-                "Led the product development from inception to completion.",
-                "Designed and integrated cross-platform and multi-player functionality.",
-                "Applied design patterns including Factory and Singleton to enhance code architecture."
+        "importer": {
+            id: "importer",
+            title: "Universal Mesh Importer",
+            tagline: "Runtime Asset Import Plugin",
+            category: "Tools Development",
+            company: "Personal Tool",
+            date: "2021",
+            image: "",
+            tools: ["C++", "Assimp", "Unreal Engine"],
+            links: [{ label: "GitHub", url: "#" }],
+            overview: "A plugin to import OBJ/FBX models at runtime without freezing the game thread.",
+            contributions: [
+                "Wrapped around the Assimp library to parse model data asynchronously.",
+                "Generated procedural meshes in Unreal Engine from the parsed data."
             ],
-            tools: "Unreal Engine 4, Photon Networking",
-            platforms: "PC, Oculus Rift S"
-        },
-        {
-            title: "Packaging Technology Training",
-            company: "BuMo3DR",
-            date: "Apr 2019 - May 2020",
-            details: [
-                "Created 3D UI interactions, animated interactions, and controllers.",
-                "Implemented grab interactions tailored for the Oculus platform.",
-                "Integrated cross-platform multiplayer functionality and an in-game replay system.",
-                "Implemented design patterns (Command, Factory, Message) to enhance software architecture efficiency."
-            ],
-            tools: "Unreal Engine 4, Photon Networking",
-            platforms: "PC, Oculus Rift"
-        },
-        {
-            title: "Avant (VR)",
-            company: "BuMo3DR",
-            date: "Apr 2018 - May 2020",
-            details: [
-                "Implemented an in-game replay system enabling users to view and save replays of their interactions in XML format, with support for cross-platform multiplayer functionality.",
-                "Refactored and ported library code into project plugins to enhance reusability.",
-                "Enhanced codebase by rewriting and optimizing various components.",
-                "Employed design patterns such as Message, Command, and State Machine to improve software architecture."
-            ],
-            tools: "Unreal Engine 4, Photon Networking",
-            platforms: "PC, Oculus Rift"
-        },
-        {
-            title: "Industry 4.0 Training (MR)",
-            company: "BuMo3DR",
-            date: "Jul 2018 - Nov 2018",
-            details: [
-                "Implemented features such as cross-platform multiplayer, spectator view, and live event synchronization.",
-                "Applied various design patterns, including Message, State Machines, Singleton, and Event Listeners.",
-                "Integrated gesture recognition and image target detection APIs."
-            ],
-            tools: "Unity, Photon Networking, MRTK, Vuforia SDK",
-            platforms: "Hololens, iPad"
-        },
-        {
-            title: "Journey through Nasal Cavity",
-            company: "BuMo3DR",
-            date: "",
-            details: [
-                "Designed and implemented the entire application workflow.",
-                "Developed AI algorithms to efficiently simulate the flow of large particles.",
-                "Created a custom particle system module with path modifiers and various emitter shapes.",
-                "Developed an iPad application for spectator view and scene control."
-            ],
-            tools: "Unreal Engine 4, Photon Networking",
-            platforms: "PC, Oculus Rift, HTC Vive"
-        },
-        {
-            title: "360 Video VR Plugin",
-            company: "BuMo3DR",
-            date: "",
-            details: [
-                "Created a custom plugin in Unreal Engine 4 to render 360 videos.",
-                "Developed scripts in Python to utilize ffmpeg for combining individual frames into videos of desired resolutions.",
-                "Automated 360 frame capture using Nvidia Ansel for efficient video creation processes."
-            ],
-            tools: "Unreal Engine 4, Python, Nvidia Ansel",
-            platforms: "Oculus Go, Oculus Rift, HTC Vive"
-        },
-        {
-            title: "Virtual Lab (VR)",
-            company: "BuMo3DR",
-            date: "",
-            details: [
-                "Developed user interface, animation interactions, and motion controls."
-            ],
-            tools: "Unity, Photon Networking",
-            platforms: "PC, Oculus Rift"
-        },
-        {
-            title: "Go Game (MR)",
-            company: "BuMo3DR",
-            date: "",
-            details: [
-                "Designed and implemented game logic and mechanics, creating and fine-tuning the core gameplay elements to ensure a seamless and engaging user experience.",
-                "Developed an editor application that allows for the precise placement of virtual objects in real-world locations, enhancing the game's interactive capabilities.",
-                "Created AI algorithms that enable enemy entities to exhibit realistic flocking and evasion behaviors, adding depth and challenge to the gameplay."
-            ],
-            tools: "Unity, Vuforia",
-            platforms: "Hololens, iPad"
-        },
-        {
-            title: "Data Visualization",
-            company: "BuMo3DR",
-            date: "",
-            details: [
-                "Designed and developed the entire application according to client specifications.",
-                "Integrated OGDF (Open Graph Drawing Framework) for advanced graph visualization.",
-                "Implemented client authorization API for secure access."
-            ],
-            tools: "Unreal Engine 4, OGDF",
-            platforms: "PC"
-        },
-        {
-            title: "VR Video Gallery",
-            company: "BuMo3DR",
-            date: "",
-            details: [
-                "Created a custom 360 video player to render and display videos.",
-                "Designed and implemented a user interface for browsing and interacting with the video library."
-            ],
-            tools: "Unity",
-            platforms: "Samsung Gear VR"
-        },
-        {
-            title: "Battleship (iPhone)",
-            company: "Electronic Arts",
-            date: "",
-            details: [
-                "Enhanced application performance and stability through optimization and bug fixing.",
-                "Updated the application to support the latest iOS platform available at the time.",
-                "Expanded device compatibility to include more iOS devices."
-            ],
-            tools: "Objective-C, C++",
-            platforms: "iPhone"
-        },
-        {
-            title: "Monopoly (iPad)",
-            company: "Electronic Arts",
-            date: "",
-            details: [
-                "Added and replaced game tokens.",
-                "Optimized the application and updated it to the latest iOS version.",
-                "Added support for the latest iPad generation.",
-                "Resolved several multiplayer connection problems, crashes, and audio issues."
-            ],
-            tools: "Objective-C, C++",
-            platforms: "iPad"
-        },
-        {
-            title: "Boggle (iPhone)",
-            company: "Electronic Arts",
-            date: "",
-            details: [
-                "Fixed multiple crashes and bugs.",
-                "Expanded iPhone device support.",
-                "Integrated in-house SDKs for enhanced functionality."
-            ],
-            tools: "Objective-C, C++",
-            platforms: "iPhone"
-        },
-        {
-            title: "Need for Speed: Shift",
-            company: "Electronic Arts",
-            date: "",
-            details: [
-                "Improved user interface as per the design.",
-                "Fixed several crashes and bugs.",
-                "Integrated AD sdk and COPPA sdk."
-            ],
-            tools: "Objective-C, C++",
-            platforms: "iPhone"
-        },
-        {
-            title: "Need for Speed: Hot Pursuit",
-            company: "Electronic Arts",
-            date: "",
-            details: [
-                "Tested Everyplay SDK for video recording with developer assistance.",
-                "Integrated AD SDK and proprietary SDKs to enhance user experience.",
-                "Added support for the latest iOS devices.",
-                "Implemented user interface changes."
-            ],
-            tools: "Objective-C, C++",
-            platforms: "iPhone"
-        },
-        {
-            title: "Madden NFL (iPad)",
-            company: "Electronic Arts",
-            date: "",
-            details: [
-                "Optimized application performance, fixed bugs, and updated to the latest iOS version.",
-                "Expanded iOS device compatibility.",
-                "Integrated AD SDK and proprietary SDKs to enhance user experience."
-            ],
-            tools: "Objective-C, C++, iOS SDK",
-            platforms: "iPad"
-        },
-        {
-            title: "Java Feature Phone Ports",
-            company: "Electronic Arts",
-            date: "",
-            details: [
-                "Ported EA titles including Sims, NFS Hot Pursuit, FIFA, Bejeweled, and The Simpsons to various Java feature phones."
-            ],
-            tools: "Java ME",
-            platforms: "Feature Phones"
+            gallery: []
         }
-    ],
-    skills: [
-        "C++", "C#", "Python", "Unreal Engine 5", "Unity3D",
-        "OpenGL", "DirectX", "AR/VR/MR Development",
-        "Shader Programming (HLSL/GLSL)", "Multiplayer (Photon/Replication)",
-        "Mobile Optimization", "Design Patterns"
-    ]
+    }
 };
 
+// Start Render Logic
 document.addEventListener('DOMContentLoaded', () => {
-    renderProjects();
-    renderSkills();
-    renderExperience();
-    setupModals();
-    setupScrollAnimations();
+    // 1. Render Categories
+    const mainContainer = document.getElementById('main-content');
+    if (mainContainer) {
+        resumeData.projectCategories.forEach(category => {
+            renderCategory(category, mainContainer);
+        });
+    }
+
+    // 2. Setup Details View (Modal)
+    setupDetailView();
+    renderSocials();
 });
 
-function renderProjects() {
-    const grid = document.querySelector('.projects-grid');
-    grid.innerHTML = ''; // Clear existing
+// --- Rendering Logic ---
 
-    resumeData.projects.forEach((project, index) => {
+function renderCategory(category, container) {
+    const section = document.createElement('section');
+    section.className = 'project-category-section';
+    section.innerHTML = `
+        <div class="container">
+            <h2 class="category-title">${category.title}</h2>
+            <div class="category-grid" id="grid-${category.id}">
+                <!-- Cards go here -->
+            </div>
+        </div>
+    `;
+    container.appendChild(section);
+
+    const grid = section.querySelector(`#grid-${category.id}`);
+
+    category.projectIds.forEach(pid => {
+        const project = resumeData.projects[pid];
+        if (!project) return;
+
         const card = document.createElement('article');
-        card.className = 'project-card fade-in-up'; // Add animation class
-        // Stagger animation based on index, capped at 500ms
-        const delay = Math.min(index * 50, 500);
-        card.style.transitionDelay = `${delay}ms`;
+        card.className = 'project-card';
+        card.onclick = () => openDetailView(pid); // Entire card is clickable
 
-        let mediaContent;
+        // Use a placeholder if no image
+        let mediaHtml = '';
         if (project.image) {
-            mediaContent = `<img src="${project.image}" alt="${project.title}" style="width:100%; height:100%; object-fit:cover;">`;
+            mediaHtml = `<div class="card-media"><img src="${project.image}" alt="${project.title}"></div>`;
         } else {
-            mediaContent = `
-                <div style="color: #666; font-family:var(--font-mono); text-align:center; padding:1rem;">
-                        [${project.title} Preview]
-                    </div>
-            `;
+            // Generate a colored placeholder based on title char code
+            const hue = project.title.charCodeAt(0) * 10 % 360;
+            mediaHtml = `<div class="card-media placeholder" style="background: hsl(${hue}, 60%, 90%); color: hsl(${hue}, 60%, 30%); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:2rem;">${project.title.charAt(0)}</div>`;
         }
 
-        // Show description instead of details in card
-        const description = project.description || "Confidential project. System architecture and performance optimization.";
-
         card.innerHTML = `
-            <div class="project-media">
-                ${mediaContent}
-            </div>
-            <div class="project-info">
-                <h3 class="project-title">${project.title}</h3>
-                <div class="tech-stack">
-                    ${project.tools.split(',').slice(0, 3).map(t => `<span class="tech-tag">${t.trim()}</span>`).join('')}
-                </div>
-                <div class="project-desc">
-                    <p>${description}</p>
-                </div>
-                <div class="card-actions">
-                    <a href="#" class="btn view-code-btn" data-index="${index}">Details</a>
+            ${mediaHtml}
+            <div class="card-content">
+                <h3 class="card-title">${project.title}</h3>
+                <p class="card-tagline">${project.tagline}</p>
+                <div class="card-tags">
+                   ${project.tools.slice(0, 3).map(t => `<span class="tag">${t}</span>`).join('')}
                 </div>
             </div>
         `;
@@ -390,101 +194,84 @@ function renderProjects() {
     });
 }
 
-function renderSkills() {
-    // Skills are currently static in HTML for simplicity, 
-    // but we will ensure they get the animation class if we were generating them.
-}
-
-function renderExperience() {
-    const container = document.querySelector('#experience .container');
+function renderSocials() {
+    const container = document.getElementById('socials-container');
     if (!container) return;
+    container.innerHTML = resumeData.socials.map(s =>
+        `<a href="${s.url}" target="_blank" class="social-link">${s.label}</a>`
+    ).join(' / ');
+}
 
-    // Create or get the wrapper list
-    let list = document.getElementById('experience-list');
-    if (!list) {
-        list = document.createElement('div');
-        list.id = 'experience-list';
-        container.appendChild(list);
-    }
+// --- Detail View Logic ---
 
-    // Clear list to avoid duplicates if re-rendered
-    list.innerHTML = '';
-
-    resumeData.experience.forEach((job, index) => {
-        const item = document.createElement('div');
-        item.className = 'timeline-item fade-in-up';
-        item.style.transitionDelay = `${Math.min(index * 50, 500)}ms`;
-
-        item.innerHTML = `
-            <h3>${job.title}</h3>
-            <h4>${job.company} <span class="date">${job.date}</span></h4>
-            <ul>
-                ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
-            </ul>
+function setupDetailView() {
+    // Create the full-screen view container if it doesn't exist
+    if (!document.getElementById('detail-view')) {
+        const view = document.createElement('div');
+        view.id = 'detail-view';
+        view.className = 'detail-view';
+        view.innerHTML = `
+            <div class="detail-content-wrapper">
+                <button class="close-detail-btn" onclick="closeDetailView()">✕</button>
+                <div id="detail-content"></div>
+            </div>
         `;
-        list.appendChild(item);
-    });
+        document.body.appendChild(view);
+    }
 }
 
-function setupModals() {
-    const modal = document.getElementById('project-modal');
-    const closeBtn = document.querySelector('.close-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalBody = document.getElementById('modal-body');
+function openDetailView(projectId) {
+    const project = resumeData.projects[projectId];
+    if (!project) return;
 
-    // Use event delegation for dynamically created buttons
-    document.querySelector('.projects-grid').addEventListener('click', (e) => {
-        if (e.target.classList.contains('view-code-btn')) {
-            e.preventDefault();
-            const index = e.target.dataset.index;
-            const project = resumeData.projects[index];
+    const view = document.getElementById('detail-view');
+    const content = document.getElementById('detail-content');
 
-            modalTitle.textContent = project.title;
-            modalBody.innerHTML = `
-                <h3>${project.company} <span class="date">${project.date}</span></h3>
-                <div class="modal-meta" style="margin-bottom:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-                    <span class="tech-tag">${project.platforms}</span>
-                    <span class="tech-tag">${project.tools}</span>
-                </div>
-                
-                <h4>Key Contributions</h4>
-                <ul>
-                    ${project.details.map(d => `<li>${d}</li>`).join('')}
-                </ul>
-            `;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    });
+    // Populate Content (sska.fyi style)
+    content.innerHTML = `
+        <header class="detail-header">
+            <h1 class="detail-title">${project.title}</h1>
+            <p class="detail-subtitle">${project.company} • ${project.date}</p>
+        </header>
 
-    const closeModal = () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    };
+        <section class="detail-overview">
+            <h2>Overview</h2>
+            <p>${project.overview}</p>
+        </section>
 
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-    });
+        <section class="detail-tech">
+            <h2>Tech Stack</h2>
+            <div class="tech-list">
+                ${project.tools.map(t => `<span class="tech-badge">${t}</span>`).join('')}
+            </div>
+        </section>
+
+        <div class="detail-links">
+             ${project.links.map(l => `<a href="${l.url}" class="detail-link-btn" target="_blank">${l.label} ↗</a>`).join('')}
+        </div>
+
+        <section class="detail-contributions">
+            <h2>Contributions</h2>
+            <ul>
+                ${project.contributions.map(c => `<li>${c}</li>`).join('')}
+            </ul>
+        </section>
+        
+        <!-- Gallery could go here if we had real images -->
+    `;
+
+    view.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
-function setupScrollAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Optional: Unobserve after revealing to only animate once
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.05, rootMargin: "0px 0px 100px 0px" });
-
-    // Observe static and dynamic elements using the new class
-    setTimeout(() => {
-        const elements = document.querySelectorAll('.fade-in-up');
-        elements.forEach(el => observer.observe(el));
-    }, 100);
+// Global scope for onclick
+window.closeDetailView = function () {
+    const view = document.getElementById('detail-view');
+    view.classList.remove('active');
+    document.body.style.overflow = '';
 }
+
+// Close on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDetailView();
+});

@@ -5,125 +5,49 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="./vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joseph Fernandez | Game Programmer</title>
-  <!-- Google Fonts -->
+  <title>Joseph Fernandez | Gameplay Programmer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=light">
+  <link rel="stylesheet" href="./style.css?v=sska">
 </head>
 
 <body>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="container hero-content">
-      <h1 class="glitch" data-text="Joseph Fernandez">Joseph Fernandez</h1>
-      <div class="role">&lt; Gameplay Programmer /&gt;</div>
-      <p class="bio">
-        Developer with 10+ years of experience in game programming, real-time visualization,
-        and XR applications. Specializing in Unreal Engine, Unity, and Mobile Performance.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn">Projects</a>
-        <a href="#experience" class="btn btn-secondary">Experience</a>
-      </div>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <div class="logo">Joseph Fernandez</div>
+      <nav id="socials-container">
+        <!-- Socials injected by JS -->
+      </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Experience Section (New) -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title">Professional Experience</h2>
-        <!-- Populated by JS -->
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Gameplay Programmer</h1>
+      <p class="role">Unreal Engine • C++ • XR Development</p>
+      <p class="bio">
+        Specializing in multiplayer replication, game mechanics, and tool development.<br>
+        10+ years of experience shipping titles on PC, Mobile, and VR.
+      </p>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-title">Technical Arsenal</h2>
-        <div class="skills-grid">
-
-          <div class="skill-category">
-            <h3>Languages</h3>
-            <ul class="skill-list">
-              <li>C++ & C#</li>
-              <li>Python</li>
-              <li>Objective-C</li>
-              <li>HLSL / GLSL</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3>Engines & APIs</h3>
-            <ul class="skill-list">
-              <li>Unreal Engine 5</li>
-              <li>Unity 3D</li>
-              <li>OpenGL / DirectX</li>
-              <li>MRTK / ARKit / Vuforia</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3>Specialization</h3>
-            <ul class="skill-list">
-              <li>XR Development</li>
-              <li>Multiplayer (Photon/Replication)</li>
-              <li>Mobile Optimization</li>
-              <li>Game Math & Physics</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <div class="container" style="text-align: center;">
-        <h2 class="section-title" style="display:inline-block; border:none; padding:0;">Ready to Collaborate?</h2>
-        <p style="color: var(--text-secondary); margin-bottom: var(--spacing-lg);">
-          Currently open to Game Programmer roles. Check out my resume or send an email.
-        </p>
-        <div class="contact-row">
-          <a href="mailto:joseph@example.com" class="btn">Email Me</a>
-          <a href="https://linkedin.com" target="_blank" class="btn btn-secondary">LinkedIn</a>
-          <a href="https://github.com" target="_blank" class="btn btn-secondary">GitHub</a>
-          <a href="/resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
-        </div>
-      </div>
-    </section>
+  <!-- Main Content (Categories injected here) -->
+  <main id="main-content">
+    <!-- JS renders sections here -->
   </main>
 
-  <footer
-    style="text-align: center; padding: 2rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); margin-top: 2rem;">
-    <p>&copy; 2025 Joseph Fernandez. Built with standard web tech.</p>
-  </footer>
-
-  <!-- Technical Modal -->
-  <div id="project-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h2 id="modal-title" style="color: var(--text-accent); margin-bottom: 1rem;">Title</h2>
-      <div id="modal-body">
-        <!-- JS will inject content here -->
-      </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Joseph Fernandez</p>
     </div>
-  </div>
+  </footer>
 
   <script type="module" src="./main.js"></script>
 </body>
