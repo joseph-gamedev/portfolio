@@ -216,8 +216,10 @@ a:not(.btn):not(.project-card):hover::after {
 
 .project-card {
   background: var(--bg-card);
-  border-radius: 16px;
-  border: 1px solid transparent;
+  border-radius: 12px;
+  /* Slight sharper 12px */
+  border: 1px solid var(--border-color);
+  /* Visible border by default */
   display: flex;
   flex-direction: column;
   /* height: 100%; Removed to allow natural height */
@@ -235,7 +237,8 @@ a:not(.btn):not(.project-card):hover::after {
 
 .card-media {
   height: 200px;
-  border-radius: 12px;
+  border-radius: 8px;
+  /* 12px outer - padding approx -> 8px inner looks cleaner */
   overflow: hidden;
   margin: 0.75rem 0.75rem 0 0.75rem;
   flex-shrink: 0;
