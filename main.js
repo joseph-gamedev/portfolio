@@ -343,7 +343,7 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "/portfolio/assets/madden.jpg",
+            image: "/portfolio/assets/madden_main.jpg",
             tools: ["Objective-C", "C++", "iOS SDK"],
             links: [],
             overview: "iPad version of Madden NFL.",
