@@ -295,7 +295,8 @@ const resumeData = {
             ],
             gallery: [
                 "/portfolio/assets/boggle_1.jpg",
-                "/portfolio/assets/boggle_2.jpg"
+                "/portfolio/assets/boggle_2.jpg",
+                "/portfolio/assets/boggle_3.png"
             ]
         },
         "nfs-shift": {
@@ -535,26 +536,26 @@ document.addEventListener('keydown', (e) => {
 // Card Slideshow Logic
 window.cardSlideshowIntervals = new Map();
 
-window.startCardSlideshow = function(element) {
+window.startCardSlideshow = function (element) {
     const images = JSON.parse(element.getAttribute('data-images'));
     if (!images || images.length < 2) return;
-    
+
     let index = 0;
     const img = element.querySelector('img');
-    
+
     // Clear any existing
     if (window.cardSlideshowIntervals.has(element)) clearInterval(window.cardSlideshowIntervals.get(element));
-    
+
     const interval = setInterval(() => {
         index = (index + 1) % images.length;
         img.src = images[index];
         // Preload next? Browser handles it usually
     }, 1200); // 1.2 second switch
-    
+
     window.cardSlideshowIntervals.set(element, interval);
 }
 
-window.stopCardSlideshow = function(element) {
+window.stopCardSlideshow = function (element) {
     if (window.cardSlideshowIntervals.has(element)) {
         clearInterval(window.cardSlideshowIntervals.get(element));
         window.cardSlideshowIntervals.delete(element);
@@ -562,7 +563,7 @@ window.stopCardSlideshow = function(element) {
     // Reset to primary image if desired. Not strictly necessary but nice.
     const images = JSON.parse(element.getAttribute('data-images'));
     if (images && images.length > 0) {
-       const img = element.querySelector('img');
-       img.src = images[0];
+        const img = element.querySelector('img');
+        img.src = images[0];
     }
 }
