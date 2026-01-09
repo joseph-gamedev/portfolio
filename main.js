@@ -511,7 +511,19 @@ function openDetailView(projectId) {
             <section class="detail-gallery">
                 <h2>Gallery</h2>
                 <div class="gallery-container">
-                    ${project.gallery.map(img => `<img src="${img}" alt="${project.title} Screenshot" loading="lazy">`).join('')}
+                    ${project.gallery.map(item => {
+        const isVideo = item.endsWith('.mp4') || item.endsWith('.webm') || item.endsWith('.ogg');
+        if (isVideo) {
+            return `
+                                <video controls preload="metadata" class="gallery-item">
+                                    <source src="${item}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            `;
+        } else {
+            return `<img src="${item}" alt="${project.title} Screenshot" loading="lazy" class="gallery-item">`;
+        }
+    }).join('')}
                 </div>
             </section>
         ` : ''}

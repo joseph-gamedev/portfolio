@@ -536,3 +536,12 @@ a:not(.btn):not(.project-card):hover::after {
   transform: scale(1.02);
   box-shadow: var(--shadow-hover);
 }
+
+.gallery-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
