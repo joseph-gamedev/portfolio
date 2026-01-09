@@ -85,7 +85,7 @@ const resumeData = {
             category: "Gameplay Programming",
             company: "NextPlayerGames",
             date: "2024 - Present",
-            image: "/portfolio/assets/shadows.png",
+            image: "/portfolio/assets/shadows_thumb.jpg",
             tools: ["Unreal Engine 5", "C++", "Steamworks", "Replication Graph"],
             links: [
                 { label: "Steam Page", url: "#" },
@@ -98,7 +98,13 @@ const resumeData = {
                 "Developed scalable replicated inventory systems and network-optimized AI behaviors, ensuring consistency across clients.",
                 "Optimized network bandwidth usage by implementing custom replication conditions for high-frequency actors."
             ],
-            gallery: []
+            gallery: [
+                "/portfolio/assets/shadows_HUD.png",
+                "/portfolio/assets/shadows_gameplay_1.gif",
+                "/portfolio/assets/shadows_gameplay_2.gif",
+                "/portfolio/assets/shadows_gameplay_3.gif",
+                "/portfolio/assets/shadows_gameplay_4.gif"
+            ]
         },
         "lab-designer": {
             id: "lab-designer",
