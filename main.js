@@ -312,7 +312,7 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "./assets/nfs_shift.jpg",
+            image: "./assets/nfs_shift_feat.jpg",
             tools: ["Objective-C", "C++"],
             links: [],
             overview: "Mobile adaptation of NFS Shift.",
@@ -321,7 +321,10 @@ const resumeData = {
                 "Fixed several crashes and bugs.",
                 "Integrated AD sdk and COPPA sdk."
             ],
-            gallery: []
+            gallery: [
+                "./assets/nfs_shift_icon.jpg",
+                "./assets/nfs_shift_shot_1.png"
+            ]
         },
         "nfs-hp": {
             id: "nfs-hp",
@@ -365,7 +368,10 @@ const resumeData = {
                 "Expanded iOS device compatibility.",
                 "Integrated AD SDK and proprietary SDKs to enhance user experience."
             ],
-            gallery: []
+            gallery: [
+                "./assets/madden_main.jpg",
+                "./assets/madden_shot_1.webp"
+            ]
         },
         "java-ports": {
             id: "java-ports",
