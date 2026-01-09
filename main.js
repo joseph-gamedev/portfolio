@@ -29,9 +29,55 @@ const resumeData = {
             title: "Tools Development",
             description: "Plugins and pipeline optimization tools.",
             projectIds: ["video-plugin"]
+        },
+        {
+            id: "personal",
+            title: "Personal Projects",
+            description: "Open source libraries and experiments.",
+            projectIds: ["tiny_vfs", "jobkit"]
         }
     ],
     projects: {
+        "tiny_vfs": {
+            id: "tiny_vfs",
+            title: "tiny_vfs",
+            tagline: "Virtual File System",
+            category: "Personal Projects",
+            company: "Open Source",
+            date: "2024",
+            image: "",
+            tools: ["C++", "VFS", "Systems"],
+            links: [
+                { label: "GitHub", url: "https://github.com/joseph-gamedev/tiny_vfs" }
+            ],
+            overview: "A lightweight, portable virtual file system library designed for game engines.",
+            contributions: [
+                "Implemented a flexible mounting system for physical directories and archives.",
+                "Designed a platform-agnostic file interface for cross-platform compatibility.",
+                "Optimized for minimal memory footprint and high read performance."
+            ],
+            gallery: []
+        },
+        "jobkit": {
+            id: "jobkit",
+            title: "jobkit",
+            tagline: "C++ Job System",
+            category: "Personal Projects",
+            company: "Open Source",
+            date: "2024",
+            image: "",
+            tools: ["C++", "Multithreading", "Fibers"],
+            links: [
+                { label: "GitHub", url: "https://github.com/joseph-gamedev/jobkit" }
+            ],
+            overview: "A fiber-based job system for efficient multithreading in game applications.",
+            contributions: [
+                "Implemented fiber-based task switching for low-overhead concurrency.",
+                "Designed a lock-free work-stealing queue for load balancing across cores.",
+                "Created a simple API for dependency management and graph execution."
+            ],
+            gallery: []
+        },
         "shadows": {
             id: "shadows",
             title: "Shadows of Dawn",
