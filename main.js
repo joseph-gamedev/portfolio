@@ -50,11 +50,12 @@ const resumeData = {
             links: [
                 { label: "GitHub", url: "https://github.com/joseph-gamedev/atlas2d" }
             ],
-            overview: "A Windows-focused 2D game engine featuring a D3D11 renderer and a custom build system.",
+            overview: "A minimal C++ game engine framework for 2D games. Features include a custom Entity Component System (ECS), collision detection using SAT, custom smart pointers, and data-driven object creation via JSON.",
             contributions: [
-                "Implemented a Direct3D 11 renderer with a GLib compatibility layer.",
-                "Designed a custom CMake-based build system for easy dependency management.",
-                "Created a sample game (MonsterChaseGame) to demonstrate engine capabilities."
+                "Implemented a flexible Entity Component System (ECS) for object composition and behavior customization.",
+                "Developed collision detection and response using the Separating Axis Theorem (SAT).",
+                "Implemented user input handling, a basic job system, and data-oriented object creation from JSON.",
+                "Created a custom math library and smart pointer implementations (Shared & Weak) for the existing framework."
             ],
             gallery: []
         },
