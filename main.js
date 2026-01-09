@@ -45,7 +45,7 @@ const resumeData = {
             category: "Personal Projects",
             company: "Open Source",
             date: "2024",
-            image: "./placeholder_thumb.png",
+            image: "./assets/atlas2d_thumb.png",
             tools: ["C++", "DirectX 11", "CMake"],
             links: [
                 { label: "GitHub", url: "https://github.com/joseph-gamedev/atlas2d" }
