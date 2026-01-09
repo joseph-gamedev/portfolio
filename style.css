@@ -274,54 +274,107 @@ a:hover {
   border-bottom: none;
 }
 
-/* Experience - Vertical Timeline (Clean) */
-.timeline-item {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--border-color);
+/* Experience - Timeline Cards */
+#experience-list {
+  position: relative;
+  border-left: 2px solid var(--border-color);
+  margin-left: 1rem;
+  padding-left: 2rem;
 }
 
-.timeline-item:last-child {
-  border-bottom: none;
+.timeline-item {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.timeline-item:hover {
+  border-color: var(--border-active);
+  transform: translateX(5px);
+}
+
+/* Timeline Node/Dot */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.6rem;
+  /* Align with rail */
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-primary);
+  border: 2px solid var(--text-primary);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item:hover::before {
+  background: var(--text-primary);
 }
 
 .timeline-item h3 {
-  font-weight: 700;
   color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
 }
 
 .timeline-item h4 {
   color: var(--text-dim);
-  font-weight: normal;
-  font-size: 0.95rem;
-  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.timeline-item .date {
+  color: var(--text-accent);
+  font-weight: 600;
 }
 
 .timeline-item ul {
   list-style: none;
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  border-left: 2px solid var(--border-color);
-  padding-left: 1.5rem;
+  padding-left: 0.5rem;
 }
 
 .timeline-item li {
   position: relative;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: var(--text-secondary);
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .timeline-item li::before {
-  content: '';
+  content: '▸';
   position: absolute;
-  left: -1.9rem;
-  top: 0.5rem;
-  width: 6px;
-  height: 6px;
-  background: var(--border-color);
-  border-radius: 50%;
+  left: 0;
+  color: var(--text-dim);
+}
+
+/* Mobile Adjustments for Timeline */
+@media (max-width: 768px) {
+  #experience-list {
+    margin-left: 0.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    left: -2.05rem;
+  }
+
+  .timeline-item h4 {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
 }
 
 /* Footer */
