@@ -379,7 +379,7 @@ function renderProjects() {
                     ${project.tools.split(',').slice(0, 3).map(t => `<span class="tech-tag">${t.trim()}</span>`).join('')}
                 </div>
                 <div class="project-desc">
-                    <p>${description}</p>
+                    <p style="margin:0;">${description}</p>
                 </div>
                 <div class="card-actions">
                     <a href="#" class="btn view-code-btn" data-index="${index}">Details</a>
@@ -407,9 +407,9 @@ function renderExperience() {
         item.style.transitionDelay = `${Math.min(index * 50, 500)}ms`; // Stagger
 
         item.innerHTML = `
-            <h3>${job.title}</h3>
-            <h4>${job.company} <span class="date">${job.date}</span></h4>
-            <ul>
+            <h3 style="color:var(--text-accent);">${job.title}</h3>
+            <h4 style="color:var(--text-primary); margin-bottom:0.5rem;">${job.company} | <span style="font-weight:normal; font-size:0.9rem;">${job.date}</span></h4>
+            <ul style="list-style: none; margin-left: 0; color: var(--text-secondary);">
                 ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
             </ul>
         `;
@@ -432,15 +432,15 @@ function setupModals() {
 
             modalTitle.textContent = project.title;
             modalBody.innerHTML = `
-                <h3>${project.company} <span class="date">${project.date}</span></h3>
-                <div class="modal-meta" style="margin-bottom:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-                    <span class="tech-tag">${project.platforms}</span>
-                    <span class="tech-tag">${project.tools}</span>
+                <h3 style="color:var(--text-secondary); margin-bottom:1rem;">${project.company} <span style="font-weight:normal; font-size:0.9rem; float:right;">${project.date}</span></h3>
+                <div style="margin-bottom:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+                    <span class="tech-tag" style="background:rgba(255,255,255,0.1); color:#fff;">${project.platforms}</span>
+                    <span class="tech-tag" style="border-color:var(--text-accent);">${project.tools}</span>
                 </div>
                 
-                <h4>Key Contributions</h4>
-                <ul>
-                    ${project.details.map(d => `<li>${d}</li>`).join('')}
+                <h4 style="margin-top:1.5rem; margin-bottom:1rem; border-bottom:1px solid #333; padding-bottom:0.5rem; color: #fff;">Key Contributions</h4>
+                <ul style="padding-left:1.5rem; line-height:1.8;">
+                    ${project.details.map(d => `<li style="margin-bottom:0.5rem;">${d}</li>`).join('')}
                 </ul>
             `;
             modal.classList.add('active');
