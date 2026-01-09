@@ -284,7 +284,7 @@ const resumeData = {
             category: "Professional Work",
             company: "Electronic Arts",
             date: "",
-            image: "",
+            image: "/portfolio/assets/boggle_1.jpg",
             tools: ["Objective-C", "C++"],
             links: [],
             overview: "iPhone version of the classic Boggle game.",
@@ -293,7 +293,10 @@ const resumeData = {
                 "Expanded iPhone device support.",
                 "Integrated in-house SDKs for enhanced functionality."
             ],
-            gallery: []
+            gallery: [
+                "/portfolio/assets/boggle_1.jpg",
+                "/portfolio/assets/boggle_2.jpg"
+            ]
         },
         "nfs-shift": {
             id: "nfs-shift",
@@ -407,12 +410,20 @@ function renderCategory(category, container) {
 
         const card = document.createElement('article');
         card.className = 'project-card';
-        card.onclick = () => openDetailView(pid); // Entire card is clickable
+        card.onclick = (e) => {
+            // Prevent opening detail view if clicking unrelated, but here the whole card is clickable. 
+            // We just let it bubble or handle it. 
+            openDetailView(pid);
+        };
 
         // Use a placeholder if no image
         let mediaHtml = '';
         if (project.image) {
-            mediaHtml = `<div class="card-media"><img src="${project.image}" alt="${project.title}"></div>`;
+            // Check for gallery for slideshow
+            const gallery = project.gallery && project.gallery.length > 1 ? JSON.stringify(project.gallery).replace(/"/g, '&quot;') : null;
+            const mouseAttrs = gallery ? `onmouseenter="startCardSlideshow(this)" onmouseleave="stopCardSlideshow(this)" data-images="${gallery}"` : '';
+
+            mediaHtml = `<div class="card-media" ${mouseAttrs}><img src="${project.image}" alt="${project.title}"></div>`;
         } else {
             // Use dummy screenshot as requested
             mediaHtml = `<div class="card-media"><img src="./placeholder_thumb.png" alt="${project.title} Placeholder"></div>`;
@@ -495,7 +506,14 @@ function openDetailView(projectId) {
             </ul>
         </section>
         
-        <!-- Gallery could go here if we had real images -->
+        ${project.gallery && project.gallery.length > 0 ? `
+            <section class="detail-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-container">
+                    ${project.gallery.map(img => `<img src="${img}" alt="${project.title} Screenshot" loading="lazy">`).join('')}
+                </div>
+            </section>
+        ` : ''}
     `;
 
     view.classList.add('active');
@@ -513,3 +531,38 @@ window.closeDetailView = function () {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeDetailView();
 });
+
+// Card Slideshow Logic
+window.cardSlideshowIntervals = new Map();
+
+window.startCardSlideshow = function(element) {
+    const images = JSON.parse(element.getAttribute('data-images'));
+    if (!images || images.length < 2) return;
+    
+    let index = 0;
+    const img = element.querySelector('img');
+    
+    // Clear any existing
+    if (window.cardSlideshowIntervals.has(element)) clearInterval(window.cardSlideshowIntervals.get(element));
+    
+    const interval = setInterval(() => {
+        index = (index + 1) % images.length;
+        img.src = images[index];
+        // Preload next? Browser handles it usually
+    }, 1200); // 1.2 second switch
+    
+    window.cardSlideshowIntervals.set(element, interval);
+}
+
+window.stopCardSlideshow = function(element) {
+    if (window.cardSlideshowIntervals.has(element)) {
+        clearInterval(window.cardSlideshowIntervals.get(element));
+        window.cardSlideshowIntervals.delete(element);
+    }
+    // Reset to primary image if desired. Not strictly necessary but nice.
+    const images = JSON.parse(element.getAttribute('data-images'));
+    if (images && images.length > 0) {
+       const img = element.querySelector('img');
+       img.src = images[0];
+    }
+}

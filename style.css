@@ -511,3 +511,28 @@ a:not(.btn):not(.project-card):hover::after {
     font-size: 2.5rem;
   }
 }
+/* Detail Gallery */
+.detail-gallery {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
