@@ -414,9 +414,8 @@ function renderCategory(category, container) {
         if (project.image) {
             mediaHtml = `<div class="card-media"><img src="${project.image}" alt="${project.title}"></div>`;
         } else {
-            // Generate a colored placeholder based on title char code
-            const hue = project.title.charCodeAt(0) * 10 % 360;
-            mediaHtml = `<div class="card-media placeholder" style="background: hsl(${hue}, 60%, 90%); color: hsl(${hue}, 60%, 30%); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:2rem;">${project.title.charAt(0)}</div>`;
+            // Use dummy screenshot as requested
+            mediaHtml = `<div class="card-media"><img src="./placeholder_thumb.png" alt="${project.title} Placeholder"></div>`;
         }
 
         card.innerHTML = `
