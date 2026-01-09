@@ -208,7 +208,7 @@ a:not(.btn):not(.project-card):hover::after {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: 2.5rem;
   align-items: start;
   /* Prevent forced stretching which can cause overlap if height is weird */
@@ -236,7 +236,7 @@ a:not(.btn):not(.project-card):hover::after {
 }
 
 .card-media {
-  height: 200px;
+  height: 260px;
   border-radius: 8px;
   /* 12px outer - padding approx -> 8px inner looks cleaner */
   overflow: hidden;
